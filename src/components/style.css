@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+.header{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: transparent;
+}
+.logo img{
+    height: 70px;
+    width: 120px;
+    margin-top: 10px;
+}
+.navbar{
+    align-items: center;
+}
+.navlinks{
+    display: flex;
+    list-style: none;
+    gap: 50px;
+    margin-top: 10px;
+}
+.navlinks li a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    transition: 0.5s;
+    
+}
+.navlinks li a:hover{
+    color: chocolate;
+}
+
+/* Home  */
+.home{
+    max-width: 100%;
+   
+}
+.home img{
+    width: 100%;
+}
