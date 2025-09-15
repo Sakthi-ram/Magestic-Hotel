@@ -6,22 +6,29 @@ const Navbar = () => {
   return (
     <>
       <section className='header'>
-        <div className='logo'>
-          <a href="#"> <img src={logo} alt="Magestic-logo" /></a>
-        </div>
-        <nav className='navbar'>
-          <ul className='navlinks'>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/explore">Explore</Link></li>
-            <li><Link to="/rooms">Rooms</Link></li>
-            <li><Link to="/booking">Booking</Link></li>
-            <li><Link to="/about">About</Link></li>
-          </ul>
-        </nav>
-        <div>
-
+        <div className='container'>
+          <div className='row'>
+            <div className='col-md-4 logo'>
+              <a href="#"> <img src={logo} alt="Magestic-logo" /></a>
+            </div>
+            <div className='col-md-4'>
+              <nav className='navbar'>
+              <ul className='navlinks '>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/explore">Explore</Link></li>
+                <li><Link to="/rooms">Rooms</Link></li>
+                <li><Link to="/booking">Booking</Link></li>
+                <li><Link to="/about">About</Link></li>
+              </ul>
+            </nav>
+            </div>
+            <div className='col-md-3'>
+              <input type="search" className='input' />
+            </div>
+          </div>
         </div>
       </section>
+
 
 
     </>
