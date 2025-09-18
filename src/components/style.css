@@ -12,7 +12,7 @@
 }
 
 .logo img:hover {
-    height: 100px;
+    height: 92px;
 }
 
 
@@ -46,7 +46,7 @@
     position: absolute;
     top: 35px;
     right: 12pc;
-    padding: 2px 2px 0 40px;
+    padding: 2px 2px 0 25px;
     color: white;
     background-color: transparent;
     border: none;
@@ -55,7 +55,7 @@
     background-image: url(//addsearch.com/logo/AAAAAA-20.png );
     background-repeat: no-repeat;
     background-position: 0% 50%;
-    background-size: 25px;
+    background-size: 15px;
     font-size: 15px;
 
 }

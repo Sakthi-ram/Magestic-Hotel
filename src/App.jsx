@@ -7,7 +7,7 @@ import Navbar from './components/Navbar'
 import Explore from './components/Explore'
 import Home from './components/Home'
 import Rooms from './components/Rooms'
-import Booking from './components/Booking'
+import Booking from './components/booking/Booking'
 import About from './components/About'
 
 function App() {
@@ -16,13 +16,11 @@ function App() {
     <>
     <BrowserRouter>
     <Navbar />
-    <Routes >
-      <Route path='/' element={<Home />}/>
-      <Route path='/explore' element={<Explore />}/>
-      <Route path='/rooms' element={<Rooms/>}/>
-      <Route path='/booking' element={<Booking />}/>
-      <Route path='/about' element={<About />}/>
-    </Routes>
+    <Home />
+    <Booking />
+    <Explore />
+    <Rooms />
+    <About/>
     </BrowserRouter>
       
     </>

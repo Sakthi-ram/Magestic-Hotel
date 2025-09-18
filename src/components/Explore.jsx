@@ -2,9 +2,13 @@ import React from 'react'
 
 const Explore = () => {
   return (
-    <div>
-    
+    <>
+    <div className='explore'id='explore'>
+       <div className='ex-img'>
+        {/* <img src={} alt="img1" /> */}
+       </div>
     </div>
+    </>
   )
 }
 

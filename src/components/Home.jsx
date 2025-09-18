@@ -1,8 +1,5 @@
 import React from 'react'
 
-import img2 from '../assets/images/premiumroom.png'
-
-
 const Home = () => {
 
 

@@ -13,7 +13,7 @@ const Navbar = () => {
         <div className='container'>
           <div className='row'>
             <div className='col-md-4 logo'>
-              <Link to='/'> <img src={logo} alt="Magestic-logo" /></Link>
+               <a href="#"><img src={logo} alt="Magestic-logo" /></a>
             </div>
             <div className='col-md-4'>
               <nav className='navbar'>
@@ -21,11 +21,11 @@ const Navbar = () => {
                   <i className={isopen ? "bi bi-x-lg" : "bi bi-filter-right"}></i>
                 </div>
                 <ul className={isopen ? 'navlinks active':'navlinks'}>
-                  <li><Link to="/">Home</Link></li>
-                  <li><Link to="/explore">Explore</Link></li>
-                  <li><Link to="/rooms">Rooms</Link></li>
-                  <li><Link to="/booking">Booking</Link></li>
-                  <li><Link to="/about">About</Link></li>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#explore">Explore</a></li>
+                  <li><a href="#rooms">Rooms</a></li>
+                  <li><a href="#booking">Booking</a></li>
+                  <li><a href="#about">About</a></li>
                 </ul>
               </nav>
             </div>
