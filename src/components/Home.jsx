@@ -1,6 +1,6 @@
 import React from 'react'
 
-import img1 from '../assets/images/main_slider1.png'
+import img2 from '../assets/images/premiumroom.png'
 
 
 const Home = () => {

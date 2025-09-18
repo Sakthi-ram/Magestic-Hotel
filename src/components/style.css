@@ -1,75 +1,282 @@
 .header {
-    background-color: transparent;
+    background: transparent;
+    position: fixed;
+    padding: 10px 10px;
+    width: 100%;
     z-index: 10;
 }
 
-.logo {
-    max-width: 200px;
-    margin-top: 10px;
-}
-
 .logo img {
-    height: 100px;
-    transition: 0.5s;
+    height: 90px;
+    transition: 0.3s;
 }
 
 .logo img:hover {
-    height: 102px;
+    height: 100px;
 }
+
 
 .navlinks {
+    list-style: none;
     display: flex;
     gap: 30px;
-    padding-top: 20px;
-    margin-top: 10px;
-}
-
-.navlinks li {
-    list-style: none;
-    padding: 0 10px;
+    position: absolute;
+    top: 30px;
+    right: 10px;
 }
 
 .navlinks li a {
     text-decoration: none;
     color: white;
-    font-weight: bold;
+    text-shadow: 1px 1px 2px black;
     font-size: 16px;
+    font-weight: bold;
+    padding: 0 15px;
     transition: 0.3s;
 }
 
 .navlinks li a:hover {
-    color: chocolate;
-    font-size: 16.5px;
+    color: rgb(185, 48, 48);
+    text-shadow: none;
+    font-size: 18px;
 }
 
+
 .input {
-    margin-left: 10pc;
-    margin-top: 2pc;
-    border-radius: 20px;
-    background-color: transparent;
+    position: absolute;
+    top: 35px;
+    right: 12pc;
+    padding: 2px 2px 0 40px;
     color: white;
-    padding: 6px 10px;
-    border-color: white;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    outline: none;
+    background-image: url(//addsearch.com/logo/AAAAAA-20.png );
+    background-repeat: no-repeat;
+    background-position: 0% 50%;
+    background-size: 25px;
+    font-size: 15px;
+
+}
+
+.input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    height: 17px;
+    width: 17px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23777'><path d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/></svg>");
+    cursor: pointer;
+    background-color: aliceblue;
+    border-radius: 50%;
+    opacity: 70%;
+}
+
+input::-webkit-search-cancel-button:hover {
+    height: 17.5px;
+    width: 17.5px;
+    border-radius: 50px;
+    background-color: whitesmoke;
+    opacity: 20%;
+
 }
 
 /* Home  */
 
-body {
-    background-image: url('../assets/images/main_slider1.png');
-    background-size: cover;
+.home {
+    background-image: url("../assets/images/main_slider1.png");
+    background-color: #cccccc;
+    height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
     background-attachment: fixed;
-    height: 100vh;
-    width: 100%;
+    display: flex;
 }
 
-.home {
-   color: white;
-}
-
-.home-text{
+.home-text {
+    margin: auto;
     text-align: center;
-    justify-content: center;
-    margin-top: 10pc;
+
+}
+
+.home-text h3 {
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+.home-text h1 {
+    color: rgb(185, 48, 48);
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.home-text h1:hover {
+    color: white;
+    text-shadow: 2px 2px 2px rgb(185, 48, 48);
+}
+
+.menuicon {
+    display: none;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+}
+
+@media (min-width:768px) and (max-width:1024px) {
+
+    .navlinks {
+        display: none;
+        flex-direction: column;
+        width: 300px;
+        text-align: center;
+        left: 150px;
+        top: 80px;
+        background-color: rgba(26, 20, 20, 0.724);
+        border-radius: 10px;
+        padding: 20px 0;
+        gap: 30px;
+    }
+
+    .navlinks li a {
+        color: white;
+        text-shadow: none;
+    }
+
+    .navlinks.active {
+        display: flex;
+    }
+
+    .menuicon {
+        display: block;
+        color: white;
+        position: absolute;
+        left: 450px;
+        top: 35px;
+        font-size: 30px;
+    }
+
+    .bi-x-lg {
+        font-size: 20px;
+        position: absolute;
+    }
+
+    .menuicon i {
+        transition: transform 0.5s ease, opacity 0.1ms ease;
+    }
+
+
+    .menuicon i.bi-x-lg {
+        transform: rotate(180deg);
+        opacity: 1;
+        top: 10px;
+    }
+
+    .menuicon i.bi-filter-right {
+        transform: rotate(360deg);
+        opacity: 1;
+        position: absolute;
+        top: 0;
+    }
+
+    .input {
+        top: 35px;
+        height: 40px;
+        left: 250px;
+        right: 150px;
+        max-width: 400px;
+        border-bottom: 1px solid white;
+        background-size: 20px;
+        
+    }
+
+
+}
+
+@media (max-width:479px) {
+    .header {
+        margin-top: 10px;
+    }
+
+    .navlinks {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(26, 20, 20, 0.724);
+        border-radius: 10px;
+        padding: 15px 16px;
+        width: 200px;
+        text-align: center;
+        top: 0;
+    }
+    .navlinks li{
+        padding: 10px 0;
+    }
+
+    .menuicon {
+        display: block;
+        font-size: 25px;
+        position: absolute;
+        right: 5px;
+        top: -30px;
+    }
+
+    .logo img {
+        height: 30px;
+    }
+
+    .logo img:hover {
+        height: 30.5px;
+    }
+
+    .input {
+        position: absolute;
+        left: 100px;
+        right: 70px;
+        top: 15px;
+        font-size: 12px;
+        background-size: 10px;
+        border-bottom: 1px solid white;
+    }
+
+    .input::-webkit-search-cancel-button {
+        height: 10px;
+        width: 10px;
+    }
+
+    .input::-webkit-search-cancel-button:hover {
+        height: 10px;
+        width: 10px;
+    }
+
+    .navlinks.active {
+        display: block;
+    }
+
+    .bi-x-lg {
+        font-size: 15px;
+        position: absolute;
+    }
+
+    .menuicon i {
+        transition: transform 0.5s ease, opacity 0.1ms ease;
+    }
+
+
+    .menuicon i.bi-x-lg {
+        transform: rotate(180deg);
+        opacity: 1;
+        top: 15px;
+    }
+
+    .menuicon i.bi-filter-right {
+        transform: rotate(360deg);
+        opacity: 1;
+        position: absolute;
+        top: 0;
+    }
+
 }
