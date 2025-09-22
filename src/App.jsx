@@ -22,7 +22,7 @@ function App() {
     <Rooms />
     <About/>
     </BrowserRouter>
-      
+   
     </>
   )
 }

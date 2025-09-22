@@ -1,17 +1,87 @@
-import React from 'react'
+import React, { useReducer, useState } from 'react'
 import '../booking/booking.css'
 
+const initialstate = { adult: 0, child: 0 };
+
+function reducer(state, action) {
+  switch (action.type) {
+    case 'incrementAdults':
+      return { ...state, adult: state.adult + 1 };
+    case 'decrementAdults':
+      return { ...state, adult: Math.max(0, state.adult - 1) };
+    case 'incrementchild':
+      return { ...state, child: state.child + 1 };
+    case 'decrementchild':
+      return { ...state, child: Math.max(0, state.child - 1) };
+    case 'reset':
+      return { ...initialstate };
+    default:
+      return state;
+  }
+}
+
+
+
 const Booking = () => {
+  const [state, dispatch] = useReducer(reducer, initialstate);
+
+  const [iscardopen, setiscardopen] = useState(false);
+
+  function click(){
+    setiscardopen(prev=>!prev);
+  }
+ 
+
   return (
     <div className='booking' id='booking'>
       <div className='container'>
         <div className='row'>
           <div className='card'>
-            <h1 className='text1'>Vacation Rental</h1>
+            <h1 className='textOne'> Rental Booking</h1>
+            <div className='book'>
+              <div className='arrival'>
+                <p>Arrival</p>
+                <input type="date" className='start' required />
+              </div>
+              <div className='departure'>
+                <p>Departure</p>
+                <input type="date" className='dep-d' required />
+              </div>
+
+
+              <div className='person'>
+                <p className='guest'><i className='bi bi-person-add'></i> Guest</p>
+
+                <div className='person-count' >
+                  <h4 className='text2' onClick={click}>{state.adult + state.child} Guests</h4>
+
+                  
+
+                    <div className={`twobox ${iscardopen ? "open" : ""}`}>
+                      <div className='Adult'>
+                        <p>Adults 13+ </p>
+                        <button className='btn1' onClick={() => dispatch({ type: 'incrementAdults' })}>+</button>
+                        <h4>{state.adult}</h4>
+                        <button className='btn3' onClick={() => dispatch({ type: 'decrementAdults' })}>-</button>
+                      </div>
+
+                      <div className='child'>
+                        <p> Children 13- </p>
+                        <button className='btn1' onClick={() => dispatch({ type: 'incrementchild' })}>+</button>
+                        <h4>{state.child}</h4>
+                        <button className='btn3' onClick={() => dispatch({ type: 'decrementchild' })}>-</button>
+                      </div>
+
+                      <button className='btn2' onClick={() => dispatch({ type: 'reset' })}>Reset</button>
+                    </div>
+              
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      
+
     </div>
   )
 }
