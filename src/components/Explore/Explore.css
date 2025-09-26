@@ -1,0 +1,98 @@
+/* Explore Top Heading text  */
+.explore-text{
+    text-align: center;
+    max-width: 70%;
+    margin: auto;
+    position: relative;
+    top: 60px;
+}
+.explore-text h4{
+    font-size: 20px;
+}
+.explore-text h1{
+    font-size: 50px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+/* Background Image  */
+.bgimg{
+    position: absolute;
+    z-index: -1;
+    max-width: 100%;
+    display: flex;
+    top: 43pc;
+   -webkit-mask: linear-gradient(transparent,black,black);      
+}
+/* Card Image  */
+.explore-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    top: 150px;
+    max-width: 100%;
+    gap: 10px;
+    
+}
+.explore-img .card1 , .img1{
+    height: 600px;
+    width: 400px;
+    overflow: hidden;
+    transition: 0.1s;
+}
+
+.explore-img .card2,.img2{
+    height: 400px;
+    width: 300px;
+    overflow: hidden;
+    transition: 0.1s;
+}
+.explore-img .card3,.img3{
+    height: 500px;
+    width: 350px;
+    overflow: hidden;
+    transition: 0.1s;
+}
+.explore-img .card4,.img4{
+    height: 650px;
+    width: 400px;
+    overflow: hidden;
+    transition: 0.1s;
+}
+.card1 .img1:hover{
+    transform: scale(1.1);
+}
+.card2 .img2:hover{
+    transform: scale(1.1);
+}
+.card3 .img3:hover{
+    transform: scale(1.1);
+}
+.card4 .img4:hover{
+    transform: scale(1.1);
+}
+
+/* Card image p  */
+
+.explore-img p{
+    font-weight: bold;
+    position: absolute;
+    color: white;
+}
+.card1 p{
+    left: 150px;
+    bottom: 30px;
+}
+
+.card2 p{
+    left: 560px;
+    bottom: 130px;
+}
+.card3 p{
+    right: 33pc;
+    bottom: 75px;
+}
+.card4 p{
+    right: 10pc ;
+    bottom: 10px;
+}

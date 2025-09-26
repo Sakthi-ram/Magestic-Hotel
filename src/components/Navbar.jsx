@@ -1,6 +1,7 @@
 import React, {  useState } from 'react'
-import { Link } from 'react-router-dom'
-import logo from '../assets/images/Majestic_Hotel_hd.png'
+import { NavLink,Link } from 'react-router-dom'
+import {HashLink} from 'react-router-hash-link'
+
 
 const Navbar = () => {
   const [isopen,setIsopen]=useState(false);
@@ -13,7 +14,7 @@ const Navbar = () => {
         <div className='container'>
           <div className='row'>
             <div className='col-md-4 logo'>
-               <a href="#"><img src={logo} alt="Magestic-logo" /></a>
+               <HashLink smooth to="/#"><h3>MAGESTIC HOTEL</h3></HashLink>
             </div>
             <div className='col-md-4'>
               <nav className='navbar'>
@@ -21,11 +22,10 @@ const Navbar = () => {
                   <i className={isopen ? "bi bi-x-lg" : "bi bi-filter-right"}></i>
                 </div>
                 <ul className={isopen ? 'navlinks active':'navlinks'}>
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#explore">Explore</a></li>
-                  <li><a href="#rooms">Rooms</a></li>
-                  <li><a href="#booking">Booking</a></li>
-                  <li><a href="#about">About</a></li>
+                  <li><HashLink smooth to="/#explore">Explore</HashLink></li>
+                  <li><HashLink smooth to="/#booking">Booking</HashLink></li>
+                  <li><HashLink smooth to="/#rooms">Rooms</HashLink></li>
+                  <li><HashLink smooth to="/#about">About</HashLink></li>
                 </ul>
               </nav>
             </div>
