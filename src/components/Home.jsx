@@ -1,8 +1,8 @@
 import React from 'react'
 import Explore from './Explore/Explore'
 import Booking from './booking/Booking'
-import Rooms from './Rooms'
-import About from './About'
+import Service from '../Services/Services'
+import About from './About/About'
 
 const Home = () => {
 
@@ -20,12 +20,13 @@ const Home = () => {
       <section id='explore'>
         <Explore/>
       </section>
-      <section id='rooms'>
-        <Rooms />
+      <section id='service'>
+        <Service />
       </section>
       <section id='about'>
         <About />
       </section>
+       
 
 
     </>

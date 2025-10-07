@@ -1,98 +1,180 @@
-/* Explore Top Heading text  */
-.explore-text{
-    text-align: center;
-    max-width: 70%;
+.explore{
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+}   
+.explore-text p{
+    width: 900px ;  
     margin: auto;
-    position: relative;
-    top: 60px;
 }
-.explore-text h4{
-    font-size: 20px;
-}
-.explore-text h1{
-    font-size: 50px;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-/* Background Image  */
 .bgimg{
+    background-image: url('../../assets/images/explore img1.jpg');
+     -webkit-mask:linear-gradient(180deg,rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 30%); 
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     position: absolute;
+    top: 20pc;
+    left: 0;
+    right: 0;
+    bottom: 0;
     z-index: -1;
-    max-width: 100%;
-    display: flex;
-    top: 43pc;
-   -webkit-mask: linear-gradient(transparent,black,black);      
-}
+    height: 70pc;
+} 
+
 /* Card Image  */
-.explore-img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.explore-img{
     position: relative;
-    text-align: center;
-    top: 150px;
-    max-width: 100%;
-    gap: 10px;
+    
+    display: flex;
+}
+.explore-img .card1,.card2,.card3,.card4{
+    position: relative;
+}
+.img1,.img2,.img3,.img4{
+    position: absolute;
     
 }
-.explore-img .card1 , .img1{
+.card1{
+    height: 600px;
+    width: 350px;
+    border-radius: 10px;
+    overflow: hidden;
+    top: 4pc;
+    left: 1pc;
+    border: 2px solid  white;
+}
+.card1 .img1{
     height: 600px;
     width: 400px;
-    overflow: hidden;
-    transition: 0.1s;
-}
-
-.explore-img .card2,.img2{
-    height: 400px;
-    width: 300px;
-    overflow: hidden;
-    transition: 0.1s;
-}
-.explore-img .card3,.img3{
-    height: 500px;
-    width: 350px;
-    overflow: hidden;
-    transition: 0.1s;
-}
-.explore-img .card4,.img4{
-    height: 650px;
-    width: 400px;
-    overflow: hidden;
-    transition: 0.1s;
+    left: -10px;
+    transition: 0.3s;
+    
 }
 .card1 .img1:hover{
-    transform: scale(1.1);
+    scale: 1.1;
+}
+
+.card2{
+    height: 450px;
+    width: 320px;
+    border-radius: 10px;
+    overflow: hidden;
+    top: 8pc;
+    left: 2pc;
+    border: 2px solid  white;
+}
+
+.card2 .img2{
+    height: 450px;
+    width: 330px;
+    left: -1px;  
+    transition: 0.3s;
 }
 .card2 .img2:hover{
-    transform: scale(1.1);
+    scale: 1.1;
+}
+.card3{
+    height: 550px;
+    width: 350px;
+    border-radius: 10px;
+    overflow: hidden;
+    top: 6pc;
+    left: 3pc;
+    border: 2px solid  white;
+    
+}
+.card3 .img3{
+    height: 550px;
+    width: 360px;
+    left: -1px;
+    transition: 0.3s;
+    
 }
 .card3 .img3:hover{
-    transform: scale(1.1);
+    scale: 1.1;
+}
+.card4{
+    height: 650px;
+    width: 420px;
+    border-radius: 10px;
+    overflow: hidden;
+    left: 4pc;
+    top: 3pc;
+    border: 2px solid white;
+}
+.card4 .img4{
+    height: 650px;
+    width: 420px;
+    left: -1px;
+    transition: 0.3s;
 }
 .card4 .img4:hover{
-    transform: scale(1.1);
-}
-
-/* Card image p  */
-
-.explore-img p{
-    font-weight: bold;
-    position: absolute;
-    color: white;
+    scale: 1.1;
 }
 .card1 p{
-    left: 150px;
-    bottom: 30px;
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    left: 7pc;
+    font-weight: bold;
+    color: white;
 }
-
 .card2 p{
-    left: 560px;
-    bottom: 130px;
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    left: 7pc;
+    font-weight: bold;
+    color: white;
 }
 .card3 p{
-    right: 33pc;
-    bottom: 75px;
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    left: 7pc;
+    font-weight: bold;
+    color: white;
 }
 .card4 p{
-    right: 10pc ;
-    bottom: 10px;
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    left: 8pc;
+    font-weight: bold;
+    color: white;
+}
+
+/* Explore footer  */
+.explore-footer{
+    position: absolute;
+    text-align: center;
+    bottom: -25pc;
+    left: 37pc;
+    color: white;
+    padding: 10px 0 ;
+}
+/* .explore-footer button{
+    background: black;
+    color: gray;
+    font-weight: bold;
+    border: none;
+    margin-top: 10px;
+} */
+ .explore-btn{
+    background-color: gray;
+    outline:none;
+    border: none ;
+    font-weight: bold;
+    transition:  0.3s ease;
+    font-size: 12px;
+    margin-top: 10px;
+}
+.explore-btn:hover{
+    background-color: black;
+}
+section{
+    scroll-margin-top: -150px;
 }

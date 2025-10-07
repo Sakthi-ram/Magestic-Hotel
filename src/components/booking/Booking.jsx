@@ -79,7 +79,7 @@ const Booking = () => {
                 </div>
               </div>
               <div className='icon'>
-                <a href="#explore"><i class="bi bi-arrow-right-circle-fill"></i></a>
+                <a href="#explore"><i className="bi bi-arrow-right-circle-fill"></i></a>
               </div>
             </div>
           </div>

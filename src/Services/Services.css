@@ -1,0 +1,98 @@
+.service{
+    position: relative;
+    top: 40pc;
+}
+
+.service-section1{
+    position: relative;
+    top: 9pc;
+    display: flex;
+}
+
+.service-header{
+    position: absolute;
+    left: 30pc;
+    color: black;
+    z-index: 10;
+    font-weight: bold;
+    text-align: center;
+}
+.service-header h1{
+    font-weight: bold;
+    font-family:'Times New Roman', Times, serif;
+}
+.service-Others{
+    position: absolute;
+    height: 410px;
+    width: 700px;
+    border: 10px solid rgb(73, 117, 73);
+    border-radius: 10px;
+    right: 20px;
+    
+    
+}
+.service-dinning{
+    position: absolute;
+    
+    height: 410px;
+    width: 700px;
+    border: 10px solid rgb(73, 117, 73);
+    border-radius: 10px;
+    top: 41pc;
+    left: 20px;
+}
+.slider-img{
+    height: 400px;
+    width:700px;
+}
+.slider-caption{
+    font-weight: bold;
+    background-color:rgb(73, 117, 73);
+    border-radius: 10px;
+    display: flex;
+    width:720px;
+    height: 100px;
+    justify-content: center;
+    position: relative;
+    top: 70px;
+    right: 110px;
+}
+.carousel-control-prev-icon{
+    background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='black' viewBox='0 0 12 8'%3E%3Cpath d='M7.5 0l-5 5 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E ");
+    background-color: #fff;
+     border-radius: 50px;
+}
+.carousel-control-next-icon{
+     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='black' viewBox='0 0 12 8'%3E%3Cpath d='M5.25  0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+     background-color: #fff;
+     border-radius: 50px;
+}
+.service-text{
+    position: absolute;
+    width: 40pc;
+    left: 20px;
+    text-align: left;
+    top: 30px;
+}
+.service-text h4{
+    font-size: 15px;
+    background-color: rgb(111, 170, 111);
+    width: 90px;
+    padding: 4px;
+    
+    
+}
+.service-text1{
+    position: absolute;
+    width: 40pc;
+    text-align: left;
+    top: 41pc;
+    right: 50px;
+}
+.service-text1 h4{
+    font-size: 15px;
+    background-color: rgb(111, 170, 111);
+    width: 70px;
+    padding: 4px;
+    
+}

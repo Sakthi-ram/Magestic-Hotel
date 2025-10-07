@@ -5,6 +5,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 import './components/style.css'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
+import Location from './components/Location/Location'
 
 
 function App() {
@@ -13,9 +14,12 @@ function App() {
     <>
     <Router>
     <Navbar />
+    
     <Routes>
       <Route path='/' element={<Home />}/>
+      
     </Routes>
+    <Location />
     </Router>
    
     </>

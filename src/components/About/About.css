@@ -1,0 +1,132 @@
+.footer{
+    position: relative;
+    background-color: black;
+    height: 370px;
+    top: 110pc;
+}
+
+.about-text{
+    text-align: left;
+}
+.about-icon{
+    text-align: left;
+}
+.about-text h1{
+    position: absolute;
+    top: 20px;
+    left: 40pc;
+    color: white;
+    padding: 5px;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+.about-text p{
+    position: absolute;
+    top: 5pc;
+    left: 33pc;
+    text-align: center;
+    color: gray;
+    width: 450px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.about-input{
+    padding: 10px;
+    outline: none;
+    border: 1px solid rgb(55, 132, 55);
+    
+    margin-top: 30px;
+    height: 50px;
+    width: 300px;
+    color: white;
+    position: absolute;
+    bottom: 7pc;
+    left: 35pc;
+    background-color: transparent;
+}
+.about-input::placeholder{
+    color: gray;
+}
+.about-btn{
+    border: none;
+    height: 50px;
+    padding: 10px;
+    
+    font-weight: bold;
+    background-color: rgb(55, 132, 55);
+    color: white;
+    position: absolute;
+    bottom: 7pc;
+    left: 53.7pc;
+}
+.about-icon{
+    position: absolute;
+    bottom: 0;
+    left:20px;
+    text-align: left;
+    margin-bottom: 10px;
+    bottom: 2pc;
+    /* display: flex; */
+}
+.about-icon i{
+   padding: 10px;
+   position: relative;
+   right: 10px;
+   top: 15px;
+  
+}
+.about-icon h3{
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    bottom: 10px;
+}
+.about-icon .linkedin{
+    text-decoration: none;
+    color: white;
+    transition: 0.4s ease-in-out;
+}
+.about-icon .linkedin:hover{
+    color: blue;
+
+}
+
+
+/* Contact us  */
+
+.contact h4{
+    color: white;
+    position: absolute;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    left: 20px;
+    top: 1.7pc;
+    font-size: 20px;
+}
+.contact .add ,.add1{
+    color: gray;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: absolute;
+    top: 4pc;
+    left: 20px;
+    
+}
+.add1{
+    top: 6pc;
+    width: 200px;
+}
+.contact .other{
+    position: absolute;
+    top: 11pc;
+    left: 20px;
+    color: gray;
+    width: 250px;
+}
+/* Name  */
+.copyright{
+    position: absolute;
+    bottom: 40px;
+    left: 37pc;
+    color: gray;
+}
