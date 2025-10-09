@@ -6,22 +6,24 @@ import './components/style.css'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Location from './components/Location/Location'
+import BookingPage from './components/BookingPage/BookingPage'
+import About from './components/About/About'
 
 
 function App() {
 
   return (
     <>
-    <Router>
-    <Navbar />
-    
-    <Routes>
-      <Route path='/' element={<Home />}/>
-      
-    </Routes>
-    <Location />
-    </Router>
-   
+      <Router>
+        <Navbar />
+        
+        <Routes>
+          <Route path='/' element={<Home />} />
+          
+          <Route path='/Bookingpage'element={<BookingPage/>}/>
+        </Routes>
+        
+      </Router>
     </>
   )
 }

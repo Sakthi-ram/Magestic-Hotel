@@ -3,6 +3,8 @@ import Explore from './Explore/Explore'
 import Booking from './booking/Booking'
 import Service from '../Services/Services'
 import About from './About/About'
+import Location from './Location/Location'
+import BookingPage from './BookingPage/BookingPage'
 
 const Home = () => {
 
@@ -26,6 +28,10 @@ const Home = () => {
       <section id='about'>
         <About />
       </section>
+      <section >
+        <Location />
+      </section>
+       
        
 
 

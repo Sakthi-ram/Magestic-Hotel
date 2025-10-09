@@ -1,0 +1,149 @@
+.leftside {
+    background-color:rgb(221, 221, 221);
+    max-width: 250px;
+    max-height: 37pc;
+    position: relative;
+    top: 100px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* Search  */
+.leftside .Bookingpage-input {
+    background-color: white;
+    outline: none;
+    text-align: center;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Price Filter */
+.pricefilter {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.pricefilter h4 {
+    font-size: 18px;
+    font-weight: bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.pricefilter p {
+    color: gray;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+/* Budget  */
+
+
+.budget input {
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    max-width: 70px;
+    text-align: center;
+}
+.budget ul{
+    display: flex;
+    gap: 10px;
+    margin-left: -30px;
+}
+.budget li{
+    list-style: none;
+}
+
+.budget
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+/* Bed size  */
+.bedsize{
+    text-align: left;
+    margin-top: 30px;
+}
+.bedsize h2{
+    font-size: 18px;
+    font-weight: bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.bedsize .diff{
+    display: flex;
+    padding: 10px; gap: 15px;
+    text-align: center;
+}
+.bedsize .diff li{
+    list-style: none;
+}
+.bedsize .diff input{
+    height: 15px;
+    width: 15px;
+    
+}
+/* Booking date  */
+.bookingdate{
+    text-align: left;
+    margin-top: -10px;
+}
+.bookingdate h3{
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+.bookingdate input{
+    text-align: center;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    padding: 10px 20px; 
+    border-radius: 5px;
+}
+.bookingdate .bp-arrival{
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+/* Cardpage  */
+.cardpage{
+    position: relative;
+    top: 100px;
+    
+}
+
+.bp-card{
+    max-width: 300px;
+    text-align: center;
+    border: 1px solid gray;
+    padding: 5px;
+    border-radius: 15px;
+    display: inline-block;
+    background-color: whitesmoke ;
+    margin-left: 20px;
+    margin-bottom: 30px;
+}
+.bp-card img{
+    width: 290px;
+    max-height: 200px;
+    border-radius: 15px;
+    padding: 10px;
+}
+.bp-card h3{
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+.bp-card button{
+    padding: 8px 25px;
+    border: none;
+    outline: none;
+    background-color: rgb(49, 49, 49);
+    border-radius: 15px;
+    color: white;
+    margin-bottom: 10px;
+}

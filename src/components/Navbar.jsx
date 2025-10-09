@@ -36,9 +36,6 @@ const Navbar = () => {
                 </ul>
               </nav>
             </div>
-            <div className='col-md-4'>
-              <input type="search" className='input' placeholder=' Search...' />
-            </div>
           </div>
 
 

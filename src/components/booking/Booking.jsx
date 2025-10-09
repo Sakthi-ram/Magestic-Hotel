@@ -1,5 +1,6 @@
 import React, { useReducer, useState } from 'react'
 import '../booking/booking.css'
+import { Link } from 'react-router-dom';
 
 const initialstate = { adult: 0, child: 0 };
 
@@ -79,7 +80,8 @@ const Booking = () => {
                 </div>
               </div>
               <div className='icon'>
-                <a href="#explore"><i className="bi bi-arrow-right-circle-fill"></i></a>
+
+                <Link to="/bookingpage" ><i className="bi bi-arrow-right-circle-fill"></i></Link>
               </div>
             </div>
           </div>
