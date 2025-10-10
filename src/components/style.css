@@ -61,6 +61,20 @@
     text-shadow: none;
     font-size: 17.5px;
 }
+/* Contact  */
+.contact{
+    font-size: 20px;
+    text-align: right;
+    margin-top: 15px;
+}
+.contact i{
+    color: white;
+    padding: 15px;
+    margin-right: 10px;
+}
+.contact a{
+    text-decoration: none;
+}
 /* Home  */
 
 .home {

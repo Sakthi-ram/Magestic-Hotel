@@ -5,7 +5,7 @@ import { NavLink, Link } from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link'
 
 
-const scrollWithOffset =(offset)=> (el) => {
+const scrollWithOffset = (offset) => (el) => {
   const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
   const yOffset = offset; // 
   window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
@@ -29,12 +29,16 @@ const Navbar = () => {
                   <i className={isopen ? "bi bi-x-lg" : "bi bi-filter-right"}></i>
                 </div>
                 <ul className={isopen ? 'navlinks active' : 'navlinks'}>
-                  <li><HashLink smooth  to="/#explore" scroll={scrollWithOffset(200)}>Explore</HashLink></li>
+                  <li><HashLink smooth to="/#explore" scroll={scrollWithOffset(200)}>Explore</HashLink></li>
                   <li><HashLink smooth to="/#booking" scroll={scrollWithOffset(-350)}>Booking</HashLink></li>
                   <li><HashLink smooth to="/#service" scroll={scrollWithOffset(550)}>Service</HashLink></li>
                   <li><HashLink smooth to="/#about" scroll={scrollWithOffset(1450)}>About</HashLink></li>
                 </ul>
               </nav>
+            </div>
+            <div className="col-md-4 contact">
+              <a href="mailto:sakthiramb975@gmail.com" title='sakthiramb975@gmail.com'><i class="bi bi-envelope-at-fill"></i></a>
+              <a href="tel:6380728206"title='6380728206'><i class="bi bi-telephone-plus-fill"></i></a>
             </div>
           </div>
 
