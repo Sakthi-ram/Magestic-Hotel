@@ -5,25 +5,25 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 import './components/style.css'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
-import Location from './components/Location/Location'
 import BookingPage from './components/BookingPage/BookingPage'
-import About from './components/About/About'
+import {BookingProvider} from './components/booking/BookingContext'
 
 
 function App() {
 
   return (
     <>
-      <Router>
-        <Navbar />
-        
-        <Routes>
-          <Route path='/' element={<Home />} />
-          
-          <Route path='/Bookingpage'element={<BookingPage/>}/>
-        </Routes>
-        
-      </Router>
+      <BookingProvider>
+        <Router>
+          <Navbar />
+
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/Bookingpage' element={<BookingPage />} />
+          </Routes>
+
+        </Router>
+      </BookingProvider>
     </>
   )
 }

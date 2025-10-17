@@ -1,30 +1,25 @@
-import React, { useReducer, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import '../booking/booking.css'
 import { Link } from 'react-router-dom';
-
-const initialstate = { adult: 0, child: 0 };
-
-function reducer(state, action) {
-  switch (action.type) {
-    case 'incrementAdults':
-      return { ...state, adult: state.adult + 1 };
-    case 'decrementAdults':
-      return { ...state, adult: Math.max(0, state.adult - 1) };
-    case 'incrementchild':
-      return { ...state, child: state.child + 1 };
-    case 'decrementchild':
-      return { ...state, child: Math.max(0, state.child - 1) };
-    case 'reset':
-      return { ...initialstate };
-    default:
-      return state;
-  }
-}
-
+import BookingContext from './BookingContext';
+import DatePicker from 'react-datepicker'
+import 'react-datepicker/dist/react-datepicker.css'
 
 
 const Booking = () => {
-  const [state, dispatch] = useReducer(reducer, initialstate);
+  
+  //useContext- Person-Count(guest), Date-Picker(startDate, endDate)
+  const { startDate, endDate, guest, setStartDate, setEndDate, setGuest } =
+    useContext(BookingContext); 
+
+  let difference = 0;
+  if (startDate && endDate) {
+    const timer = endDate.getTime() - startDate.getTime();
+    difference = Math.ceil(timer / (1000 * 60 * 60 * 24));
+    if (difference <= 0) difference = 1;
+    console.log("totel Days" + difference);
+  }
+
 
   const [iscardopen, setiscardopen] = useState(false);
 
@@ -37,44 +32,76 @@ const Booking = () => {
     <div className='booking' id='booking'>
       <div className='container'>
         <div className='row'>
+
           {/* card */}
           <div className='card'>
             <h1 className='textOne'> RENTAL BOOKING</h1>
             <div className='book'>
+
               {/* Arrival  */}
               <div className='arrival'>
                 <p>Arrival</p>
-                <input type="date" className='start' required />
+                <DatePicker
+                  selected={startDate}
+                  onChange={(date) => setStartDate(date)}
+                  placeholderText='Start Date'
+                  className='start'
+                  dateFormat="dd-MM-yyyy"
+                  required />
               </div>
+
               {/* departure  */}
               <div className='departure'>
                 <p>Departure</p>
-                <input type="date" className='dep-d' required />
+                <DatePicker
+                  selected={endDate}
+                  onChange={(date) => setEndDate(date)}
+                  placeholderText='End Date'
+                  className='end'
+                   dateFormat="dd-MM-yyyy"
+                  required />
               </div>
+
               {/* Guest  */}
               <div className='person'>
                 <p className='guest'><i className='bi bi-person-add'></i> Guest</p>
 
                 <div className='person-count' >
-                  <h4 className='guest-text' onClick={click}>{state.adult + state.child} Guests</h4>
+                  <h4 className='guest-text' onClick={click}>{guest.adult + guest.child} Guests</h4>
 
                   {/* Guest box  */}
                   <div className={`twobox ${iscardopen ? "open" : ""}`}>
                     <div className='Adult'>
                       <p>Adults 13+ </p>
-                      <button className='btn1' onClick={() => dispatch({ type: 'incrementAdults' })}>+</button>
-                      <h4>{state.adult}</h4>
-                      <button className='btn3' onClick={() => dispatch({ type: 'decrementAdults' })}>-</button>
+
+                      <button className='btn1' onClick={() => setGuest({
+                        ...guest,
+                        adult: guest.adult + 1
+                      })}>+</button>
+
+                      <h4>{guest.adult}</h4>
+
+                      <button className='btn3' onClick={() => setGuest({
+                        ...guest,
+                        adult: Math.max(0, guest.adult - 1)
+                      })}>-</button>
+
                     </div>
 
                     <div className='child'>
                       <p> Children 13- </p>
-                      <button className='btn1' onClick={() => dispatch({ type: 'incrementchild' })}>+</button>
-                      <h4>{state.child}</h4>
-                      <button className='btn3' onClick={() => dispatch({ type: 'decrementchild' })}>-</button>
+                      <button className='btn1' onClick={() => setGuest({
+                        ...guest,
+                        child: guest.child + 1
+                      })}>+</button>
+                      <h4>{guest.child}</h4>
+                      <button className='btn3' onClick={() => setGuest({
+                        ...guest,
+                        child: Math.max(0, guest.child - 1)
+                      })}>-</button>
                     </div>
 
-                    <button className='btn2' onClick={() => dispatch({ type: 'reset' })}>Reset</button>
+                    <button className='btn2' onClick={() => setGuest({ adult: 0, child: 0 })}>Reset</button>
                   </div>
 
                 </div>

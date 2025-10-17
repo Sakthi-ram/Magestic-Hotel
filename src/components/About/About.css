@@ -113,14 +113,26 @@
 }
 .add1{
     top: 6pc;
-    width: 200px;
+    left: 15px;
+    width: 400px;
 }
-.contact .other{
+.contact .others{
+    position: relative;
+    left: 0;
+    top: 10pc;
+    font-size: 15px;
+}
+.others .phone{
+    color: white;
     position: absolute;
-    top: 11pc;
     left: 20px;
-    color: gray;
-    width: 250px;
+}
+.others .email{
+    color: white;
+    position: absolute;
+    top: 30px;
+    left: 20px;
+
 }
 /* Name  */
 .copyright{

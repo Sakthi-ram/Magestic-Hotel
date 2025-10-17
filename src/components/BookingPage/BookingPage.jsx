@@ -1,5 +1,7 @@
-import React, { useMemo, useState } from 'react'
+import React, { useContext, useEffect, useMemo, useState } from 'react'
 import '../BookingPage/BookingPage.css'
+import 'react-datepicker/dist/react-datepicker.css'
+import DatePicker from 'react-datepicker'
 import Doublebed from '../../assets/Hotelrooms/Rooms-1.jpg'
 import Singlebed from '../../assets/Hotelrooms/Rooms-2.jpg'
 import Doublebed2 from '../../assets/Hotelrooms/Rooms-3.jpg'
@@ -8,6 +10,7 @@ import Doublebed4 from '../../assets/Hotelrooms/Rooms-9.png'
 import Doublebed5 from '../../assets/Hotelrooms/Rooms-6.jpg'
 import Doublebed6 from '../../assets/Hotelrooms/Rooms-7.png'
 import Doublebed7 from '../../assets/Hotelrooms/Rooms-10.png'
+import BookingContext from '../booking/BookingContext'
 
 const BookingPage = () => {
 
@@ -34,7 +37,6 @@ const BookingPage = () => {
     };
 
     const filteruser = useMemo(() => {
-        console.log("Flitered");
         return cardimages.filter((user) => {
             const matchesSearch =
                 user.name.toLowerCase().includes(search.toLowerCase()) ||
@@ -46,6 +48,26 @@ const BookingPage = () => {
         })
     }, [search, min, max])
 
+    //useContext- Person-Count(guest), Date-Picker(startDate, endDate)
+    const { startDate, endDate, guest, setStartDate, setEndDate, setGuest } =
+        useContext(BookingContext);
+    const [iscardopen, setiscardopen] = useState(false);
+
+    function click() {
+        setiscardopen(prev => !prev);
+    }
+
+    const [isOpen, setIsOpen] = useState('');
+
+    useEffect(() => {
+        if (isOpen) {
+            const timer = setTimeout(() => setIsOpen(''), 3000)
+            return () => clearTimeout(timer);
+        }
+    })
+
+
+
 
     return (
         <>
@@ -53,6 +75,8 @@ const BookingPage = () => {
                 <div className="container">
                     <div className="row">
                         <div className='col-sm-3 leftside'>
+
+                            {/* Price Filter  */}
                             <input type="search" className='Bookingpage-input'
                                 value={search} onChange={(e) => setsearch(e.target.value)} placeholder=' Search...' />
                             <div className='pricefilter'>
@@ -63,36 +87,75 @@ const BookingPage = () => {
                                         <li><input type="number" placeholder='min' value={tempMin} onChange={(e) => setTempMin(e.target.value)} /></li>
                                         <li><p>to</p></li>
                                         <li><input type="number" placeholder='max' value={tempMax} onChange={(e) => setTempMax(e.target.value)} /></li>
-                                        <li><button type='submit' onClick={applyFilter} className='btn btn-primary'><i className='bi bi-arrow-right'></i></button></li>
+                                        <li><button type='submit' onClick={applyFilter} className='btn btn-primary color'><i className='bi bi-arrow-right'></i></button></li>
                                     </ul>
                                 </div>
                             </div>
-                            <div className='bedsize'>
-                                <h2>Bed Size</h2>
-                                <div className='diff'>
-                                    <li> <input type="checkbox" /></li>
-                                    <li><p>Double</p></li>
-                                    <li><input type="checkbox" /></li>
-                                    <li><p>Single</p></li>
-                                </div>
-                            </div>
+
+                            {/*Date Booking */}
+
                             <div className='bookingdate'>
                                 <div className="bp-arrival">
                                     <h3>Arrival</h3>
-                                    <input type="date" />
+                                    <DatePicker className='startdate'
+                                        selected={startDate} onChange={setStartDate}  dateFormat="dd-MM-yyyy"/>
                                 </div>
                                 <div className="bp-departure">
                                     <h3>Departure</h3>
-                                    <input type="date" />
+                                    <DatePicker className='enddate'
+                                        selected={endDate} onChange={setEndDate}  dateFormat="dd-MM-yyyy"
+                                    />
                                 </div>
-                                {/* <div className="bp-person">
-                                    <h4><i className='bi bi-person-add'></i> Guest</h4>
-                                    <p className='guest-text'>Guest</p>
-                                </div> */}
+
+                                {/* Person Count*/}
+                                <div className="bp-person">
+                                    <h3 className='guestname'><i className='bi bi-person-add'></i> Guest</h3>
+                                    <div className='guest-btn'>
+                                        <div className='person-counts' >
+                                            <h4 className='guests' onClick={click}>{guest.adult + guest.child} Guests</h4>
+
+                                            {/* Guest box  */}
+                                            <div className={`twobox ${iscardopen ? "open" : ""}`}>
+                                                <div className='Adult'>
+                                                    <p>Adults 13+ </p>
+
+                                                    <button className='btn1' onClick={() => setGuest({
+                                                        ...guest,
+                                                        adult: guest.adult + 1
+                                                    })}>+</button>
+
+                                                    <h4>{guest.adult}</h4>
+
+                                                    <button className='btn3' onClick={() => setGuest({
+                                                        ...guest,
+                                                        adult: Math.max(0, guest.adult - 1)
+                                                    })}>-</button>
+
+                                                </div>
+
+                                                <div className='child'>
+                                                    <p> Children 13- </p>
+                                                    <button className='btn1' onClick={() => setGuest({
+                                                        ...guest,
+                                                        child: guest.child + 1
+                                                    })}>+</button>
+                                                    <h4>{guest.child}</h4>
+                                                    <button className='btn3' onClick={() => setGuest({
+                                                        ...guest,
+                                                        child: Math.max(0, guest.child - 1)
+                                                    })}>-</button>
+                                                </div>
+
+                                                <button className='btn2' onClick={() => setGuest({ adult: 0, child: 0 })}>Reset</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        {/* Room Cards */}
+                        {/* Cards */}
 
                         <div className="col-sm-9  cardpage" >
                             {filteruser.length > 0 ? (
@@ -102,19 +165,26 @@ const BookingPage = () => {
                                         <h3>{item.name}</h3>
                                         <p>{item.para}</p>
                                         <p>{item.price}$</p>
-                                        <button>Book Now</button>
-
+                                        <button onClick={() => setIsOpen(() => `${item.name} Booked. The Amount is ${item.price}`)}>Book Now</button>
+                                        <p className='totelAmt'></p>
                                     </div>
                                 ))
                             ) : (
                                 <p>No matching rooms found.</p>)}
                         </div>
+                        {isOpen &&(
+                        <div className='message'>
+                            <p className='M-text'>{isOpen}</p>
+                        </div>
+                        )}
+
+
 
 
 
                     </div>
                 </div>
-            </section>
+            </section >
 
         </>
     )

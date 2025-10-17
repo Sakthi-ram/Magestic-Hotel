@@ -37,8 +37,8 @@ const Navbar = () => {
               </nav>
             </div>
             <div className="col-md-4 contact">
-              <a href="mailto:sakthiramb975@gmail.com" title='sakthiramb975@gmail.com'><i class="bi bi-envelope-at-fill"></i></a>
-              <a href="tel:6380728206"title='6380728206'><i class="bi bi-telephone-plus-fill"></i></a>
+              <a href="mailto:sakthiramb975@gmail.com" title='sakthiramb975@gmail.com'><i className="bi bi-envelope-at-fill"></i></a>
+              <a href="tel:6380728206" title='6380728206'><i className="bi bi-telephone-plus-fill"></i></a>
             </div>
           </div>
 
