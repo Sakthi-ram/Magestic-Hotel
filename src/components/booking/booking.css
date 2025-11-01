@@ -201,3 +201,19 @@
     font-size: 40px;
     color: rgb(73, 117, 73);
 }
+
+
+@media(max-width:1024px) and  (min-width:768px) {
+    .card .textOne {
+        font-size: 15px;
+        width: 100px;
+    }
+    .book .person{
+        display: none;
+    }
+    .card{
+        width: 700px;
+        left: 0;
+    }
+
+}

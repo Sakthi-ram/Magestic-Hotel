@@ -2,9 +2,7 @@
     position: relative;
     background-color: black;
     height: 370px;
-    top: 110pc;
 }
-
 .about-text{
     text-align: left;
 }
@@ -19,7 +17,6 @@
     padding: 5px;
     font-size: 30px;
     font-family: 'Times New Roman', Times, serif;
-    
 }
 .about-text p{
     position: absolute;
@@ -51,7 +48,7 @@
     border: none;
     height: 50px;
     padding: 10px;
-    
+
     font-weight: bold;
     background-color: rgb(55, 132, 55);
     color: white;
@@ -123,12 +120,12 @@
     font-size: 15px;
 }
 .others .phone{
-    color: white;
+    color: gray;
     position: absolute;
     left: 20px;
 }
 .others .email{
-    color: white;
+    color: gray;
     position: absolute;
     top: 30px;
     left: 20px;
@@ -140,4 +137,52 @@
     bottom: 40px;
     left: 37pc;
     color: gray;
+}
+
+@media  (max-width:768px) {
+    .footer{
+        height: 450px;
+    }
+    .about-text h1{
+        left: 30pc;
+    }
+    .about-text p{
+        left: 25pc;
+        width:365px;
+    }
+    .about-input{
+        width: 250px;
+        top: 10pc;
+        left: 10pc;
+        text-align: center;
+    }
+    .about-btn{
+        top: 11.9pc;
+        left:25.7pc;
+    }
+    .contact h4{
+        top: 2pc;
+    }
+    .contact .add{
+        top: 5pc;
+    }
+    .contact .add1{
+        top: 7pc;
+    }
+    .others .phone{
+        top: 7pc;
+        left: 8pc;
+    }
+    .others .email{
+        top: 7pc;
+        left: 25pc;
+    }
+    
+    .copyright{
+        
+        left: 23pc;
+    }
+    
+    
+    
 }

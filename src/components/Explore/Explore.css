@@ -1,11 +1,11 @@
 .explore{
     position: relative;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 50px;
+    margin-bottom: 0px;
 
 }   
 .explore-text p{
-    width: 900px ;  
+    width: 100% ;  
     margin: auto;
 }
 .bgimg{
@@ -26,155 +26,136 @@
 
 /* Card Image  */
 .explore-img{
-    position: relative;
-    
-    display: flex;
+    margin-top: 100px;
+    margin-left: 20px;
 }
-.explore-img .card1,.card2,.card3,.card4{
-    position: relative;
-}
-.img1,.img2,.img3,.img4{
-    position: absolute;
-    
-}
-.card1{
-    height: 600px;
-    width: 350px;
-    border-radius: 10px;
+.cardOne{
+    height: 580px;
+    width: 370px;
     overflow: hidden;
-    top: 4pc;
-    left: 1pc;
-    border: 2px solid  white;
+    text-align: center;
+   
 }
-.card1 .img1{
-    height: 600px;
-    width: 400px;
-    left: -10px;
+.cardOne .img1{
+    height: 580px;
+    width: 370px;
     transition: 0.3s;
-    
 }
-.card1 .img1:hover{
-    scale: 1.1;
+.cardOne .img1:hover{
+    scale: 1.05;
 }
-
 .card2{
-    height: 450px;
-    width: 320px;
-    border-radius: 10px;
+    height: 370px;
+    width: 340px;
     overflow: hidden;
-    top: 8pc;
-    left: 2pc;
-    border: 2px solid  white;
+    margin-top: 50px;
 }
-
 .card2 .img2{
-    height: 450px;
-    width: 330px;
-    left: -1px;  
+    height: 370px;
+    width: 340px;
     transition: 0.3s;
 }
 .card2 .img2:hover{
-    scale: 1.1;
+    scale: 1.05;
 }
 .card3{
-    height: 550px;
-    width: 350px;
-    border-radius: 10px;
+    height: 450px;
+    width: 320px;
+    margin-top: 35px;
     overflow: hidden;
-    top: 6pc;
-    left: 3pc;
-    border: 2px solid  white;
-    
 }
 .card3 .img3{
-    height: 550px;
-    width: 360px;
-    left: -1px;
+    height: 450px;
+    width: 320px;
     transition: 0.3s;
-    
 }
 .card3 .img3:hover{
-    scale: 1.1;
+    scale: 1.05;
 }
 .card4{
     height: 650px;
-    width: 420px;
-    border-radius: 10px;
+    width: 380px;
+    margin-top: -20px;
     overflow: hidden;
-    left: 4pc;
-    top: 3pc;
-    border: 2px solid white;
 }
 .card4 .img4{
     height: 650px;
-    width: 420px;
-    left: -1px;
+    width: 380px;
     transition: 0.3s;
 }
 .card4 .img4:hover{
-    scale: 1.1;
+    scale: 1.05;
 }
-.card1 p{
-    position: absolute;
-    text-align: center;
-    bottom: 0;
-    left: 7pc;
-    font-weight: bold;
+
+.explore-img .text1,.text2,.text3,.text4{
+    position: relative;
+    bottom: 30px;
     color: white;
-}
-.card2 p{
-    position: absolute;
     text-align: center;
-    bottom: 0;
-    left: 7pc;
     font-weight: bold;
-    color: white;
 }
-.card3 p{
-    position: absolute;
-    text-align: center;
-    bottom: 0;
-    left: 7pc;
-    font-weight: bold;
-    color: white;
-}
-.card4 p{
-    position: absolute;
-    text-align: center;
-    bottom: 0;
-    left: 8pc;
-    font-weight: bold;
-    color: white;
-}
+
 
 /* Explore footer  */
 .explore-footer{
-    position: absolute;
+    margin-top: 10pc;
     text-align: center;
-    bottom: -25pc;
-    left: 37pc;
     color: white;
     padding: 10px 0 ;
 }
-/* .explore-footer button{
-    background: black;
-    color: gray;
-    font-weight: bold;
-    border: none;
-    margin-top: 10px;
-} */
+
  .explore-btn{
     background-color: gray;
     outline:none;
     border: none ;
     font-weight: bold;
     transition:  0.3s ease;
-    font-size: 12px;
+    font-size: 15px;
     margin-top: 10px;
 }
 .explore-btn:hover{
-    background-color: black;
+    background-color: white;
+    color: grey;
 }
 section{
     scroll-margin-top: -150px;
+}
+
+
+@media (max-width:1024px) and  (min-width:768px) {
+    .explore-img{
+        margin-left: 40px;
+    }
+    .cardOne ,.card2,.card3,.card4{
+        height: 430px;
+        width: 330px;
+        border-radius: 10px;
+    }
+    .cardOne >.img1{
+        height: 430px;
+        width: 330px;
+    }
+    .card2{
+        margin-top: 0;
+    }
+
+    .card2 >.img2{
+        height: 430px;
+        width: 330px;
+    }
+    .card3 , .card4{
+        margin-top: 30px;
+    }
+    
+    .card3 > .img3{
+        height: 430px;
+        width: 330px;
+    }
+    .card4 >.img4{
+        height: 430px;
+        width: 330px;
+    }
+    .bgimg{
+        height: 75pc;
+    }
 }

@@ -13,7 +13,6 @@ export const BookingProvider = ({ children }) => {
 
     function click() {
         setIsOpen((prev) => !prev)
-
     }
 
 

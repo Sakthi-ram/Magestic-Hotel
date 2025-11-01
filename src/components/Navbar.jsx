@@ -18,12 +18,12 @@ const Navbar = () => {
   return (
     <>
       <section className='header'>
-        <div className='container'>
+        <div className='container mx-0 px-0'>
           <div className='row'>
-            <div className='col-md-4 logo'>
+            <div className='col-12 col-md-4 logo'>
               <HashLink smooth to="/#"><h3>MAGESTIC HOTEL</h3></HashLink>
             </div>
-            <div className='col-md-4'>
+            <div className='col-12  col-md-4'>
               <nav className='navbar'>
                 <div className='menuicon' onClick={togglemenu}>
                   <i className={isopen ? "bi bi-x-lg" : "bi bi-filter-right"}></i>
@@ -31,12 +31,12 @@ const Navbar = () => {
                 <ul className={isopen ? 'navlinks active' : 'navlinks'}>
                   <li><HashLink smooth to="/#explore" scroll={scrollWithOffset(200)}>Explore</HashLink></li>
                   <li><HashLink smooth to="/#booking" scroll={scrollWithOffset(-350)}>Booking</HashLink></li>
-                  <li><HashLink smooth to="/#service" scroll={scrollWithOffset(550)}>Service</HashLink></li>
-                  <li><HashLink smooth to="/#about" scroll={scrollWithOffset(1450)}>About</HashLink></li>
+                  <li><HashLink smooth to="/#services" scroll={scrollWithOffset(-100)}>Service</HashLink></li>
+                  <li><HashLink smooth to="/#about" scroll={scrollWithOffset(10)}>About</HashLink></li>
                 </ul>
               </nav>
             </div>
-            <div className="col-md-4 contact">
+            <div className="col-12  col-md-4 contact-nav">
               <a href="mailto:sakthiramb975@gmail.com" title='sakthiramb975@gmail.com'><i className="bi bi-envelope-at-fill"></i></a>
               <a href="tel:6380728206" title='6380728206'><i className="bi bi-telephone-plus-fill"></i></a>
             </div>

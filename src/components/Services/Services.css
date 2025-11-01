@@ -1,0 +1,79 @@
+.service{
+    margin-top: 23pc;
+    margin-bottom: 1pc;
+}
+
+.service-header{
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+.service-header h1{
+    font-weight: bold;
+    font-family:'Times New Roman', Times, serif;
+}
+/* 1st carousel  */
+
+.games{
+    margin-top: 5pc;
+}
+.service-text{
+    text-align: left;
+   
+}
+.service-text h4{
+    font-size: 15px;
+    background-color: rgb(111, 170, 111);
+    width: 90px;
+    padding: 4px;
+}
+
+/* 2nd Carousel  */
+.dinning{
+   margin-top: 5pc;
+}
+.service-text1{
+    text-align: left;
+}
+.service-text1 h4{
+    font-size: 15px;
+    background-color: rgb(111, 170, 111);
+    width: 70px;
+    padding: 4px;
+    
+}
+/* 2 carousel img common className */
+.slider-img{
+    height: 400px;
+    width:700px;
+}
+.slider-caption{
+    font-weight: bold;
+    background-color:rgb(73, 117, 73);
+    width:680px;
+    height: 100px;
+    justify-content: center;
+    position: relative;
+    top: 70px;
+    right: 110px;
+}
+.carousel-control-prev-icon{
+    background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='black' viewBox='0 0 12 8'%3E%3Cpath d='M7.5 0l-5 5 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E ");
+    background-color: #fff;
+     border-radius: 50px;
+}
+.carousel-control-next-icon{
+     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='black' viewBox='0 0 12 8'%3E%3Cpath d='M5.25  0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+     background-color: #fff;
+     border-radius: 50px;
+}
+
+@media (max-width:1024px) and  (min-width:768px) {
+    .service{
+        margin-top: 10pc;
+    }
+    .slider-caption{
+        width: 705px;
+    }
+    
+}
