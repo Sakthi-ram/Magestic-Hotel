@@ -113,7 +113,7 @@
     box-shadow: 5px 10px 10px 0 rgba(0, 0, 0, 0.2);
     background-color: white;
     opacity: 0;
-    transform: scale(0.1);
+    
     transition: opacity 0.3s ease-in-out, transform 0.3s ease;
     pointer-events: none;
     z-index: 3;
@@ -122,9 +122,14 @@
 
 .twobox.open {
     opacity: 1;
-    transform: scale(1);
     pointer-events: auto;
+    animation-name: silde;
+    animation-duration: 0.5s;
 
+}
+@keyframes silde {
+    0%{top: 60px;}
+    100%{top: 100px;}
 }
 
 .Adult,

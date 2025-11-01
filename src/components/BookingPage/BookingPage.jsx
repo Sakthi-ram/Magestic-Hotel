@@ -73,12 +73,15 @@ const BookingPage = () => {
         <>
             <section className='BP-header'>
                 <div className="container">
-                    <div className="row">
-                        <div className='col-sm-3 leftside'>
+                    <div className="row gx-0">
+                        <div className=' col-lg-6  leftside'>
 
-                            {/* Price Filter  */}
+                            {/* Price Filter  1 */}
+                            <div className='search-card'>
                             <input type="search" className='Bookingpage-input'
                                 value={search} onChange={(e) => setsearch(e.target.value)} placeholder=' Search...' />
+                                </div>
+                                {/* 2 */}
                             <div className='pricefilter'>
                                 <h4>Price</h4>
                                 <p>Your Budget</p>
@@ -92,22 +95,22 @@ const BookingPage = () => {
                                 </div>
                             </div>
 
-                            {/*Date Booking */}
+                            {/*Date Booking 3*/}
 
                             <div className='bookingdate'>
                                 <div className="bp-arrival">
                                     <h3>Arrival</h3>
                                     <DatePicker className='startdate'
-                                        selected={startDate} onChange={setStartDate}  dateFormat="dd-MM-yyyy"/>
+                                        selected={startDate} onChange={setStartDate}  dateFormat="dd-MM-yyyy" placeholderText='StartDate '/>
                                 </div>
                                 <div className="bp-departure">
                                     <h3>Departure</h3>
                                     <DatePicker className='enddate'
-                                        selected={endDate} onChange={setEndDate}  dateFormat="dd-MM-yyyy"
+                                        selected={endDate} onChange={setEndDate}  dateFormat="dd-MM-yyyy" placeholderText='EndDate '
                                     />
                                 </div>
 
-                                {/* Person Count*/}
+                                {/* Person Count 4 */}
                                 <div className="bp-person">
                                     <h3 className='guestname'><i className='bi bi-person-add'></i> Guest</h3>
                                     <div className='guest-btn'>
@@ -115,7 +118,7 @@ const BookingPage = () => {
                                             <h4 className='guests' onClick={click}>{guest.adult + guest.child} Guests</h4>
 
                                             {/* Guest box  */}
-                                            <div className={`twobox ${iscardopen ? "open" : ""}`}>
+                                            <div className={`twobox ${iscardopen ? "opened" : ""}`}>
                                                 <div className='Adult'>
                                                     <p>Adults 13+ </p>
 
@@ -157,7 +160,7 @@ const BookingPage = () => {
 
                         {/* Cards */}
 
-                        <div className="col-sm-9  cardpage" >
+                        <div className=" col-7 col-lg-9 cardpage" >
                             {filteruser.length > 0 ? (
                                 filteruser.map((item) => (
                                     <div className='bp-card' key={item.id} >
