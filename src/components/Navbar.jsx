@@ -12,23 +12,31 @@ const scrollWithOffset = (offset) => (el) => {
 };
 const Navbar = () => {
   const [isopen, setIsopen] = useState(false);
+
   const togglemenu = () => {
     setIsopen(!isopen);
   }
+  
+  const menuIcon = document.querySelector(".menu-icon"); // your bar icon
+  const navLinks = document.querySelector(".navlinks");
+
+ 
+
+
   return (
     <>
       <section className='header'>
         <div className='container mx-0 px-0'>
           <div className='row'>
-            <div className='col-12 col-md-4 logo'>
+            <div className=' col-md-4 logo'>
               <HashLink smooth to="/#"><h3>MAGESTIC HOTEL</h3></HashLink>
             </div>
-            <div className='col-12  col-md-4'>
+            <div className=' col-md-4'>
               <nav className='navbar'>
                 <div className='menuicon' onClick={togglemenu}>
                   <i className={isopen ? "bi bi-x-lg" : "bi bi-filter-right"}></i>
                 </div>
-                <ul className={isopen ? 'navlinks active' : 'navlinks'}>
+                <ul className={`navlinks ${isopen ?'active': ''}`}>
                   <li><HashLink smooth to="/#explore" scroll={scrollWithOffset(200)}>Explore</HashLink></li>
                   <li><HashLink smooth to="/#booking" scroll={scrollWithOffset(-350)}>Booking</HashLink></li>
                   <li><HashLink smooth to="/#services" scroll={scrollWithOffset(-100)}>Service</HashLink></li>
@@ -36,9 +44,9 @@ const Navbar = () => {
                 </ul>
               </nav>
             </div>
-            <div className="col-12  col-md-4 contact-nav">
-              <a href="mailto:sakthiramb975@gmail.com" title='sakthiramb975@gmail.com'><i className="bi bi-envelope-at-fill"></i></a>
-              <a href="tel:6380728206" title='6380728206'><i className="bi bi-telephone-plus-fill"></i></a>
+            <div className=" col-md-4 contact-nav">
+              <a href="mailto:sakthiramb975@gmail.com" title='sakthiramb975@gmail.com' className={isopen ? 'mail active' : 'mail'}><i className="bi bi-envelope-at-fill"></i></a>
+              <a href="tel:6380728206" title='6380728206'className={isopen ? 'moblie active' : 'mobile'}><i className="bi bi-telephone-plus-fill"></i></a>
             </div>
           </div>
 

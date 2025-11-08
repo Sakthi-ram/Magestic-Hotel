@@ -159,3 +159,50 @@ section{
         height: 75pc;
     }
 }
+@media (max-width:426px) and (min-width:320px){
+    .explore-img{
+        margin-left: 20px;
+    }
+    .cardOne ,.card2,.card3,.card4{
+        height: 300px;
+        width: 230px;
+        border-radius: 10px;
+    }
+    .cardOne >.img1{
+        height: 300px;
+        width: 230px;
+    }
+    .card2 >.img2{
+        height: 300px;
+        width: 230px;
+    }
+    .card3 > .img3{
+        height: 300px;
+        width: 230px;
+    }
+    .card4 >.img4{
+        height: 300px;
+        width: 230px;
+    }
+    .cardOne > .img1:hover{
+        scale: 1.1;
+    }
+    .card2 > .img2:hover{
+        scale: 1.1;
+    }
+    .card3 > .img3:hover{
+        scale: 1.1;
+    }
+    .card4 > .img4:hover{
+        scale: 1.1;
+    }
+    .card4{
+        margin-top: 30px;
+    }
+    .bgimg{
+        height: 100pc;
+    }
+    .explore-footer{
+        margin-top: 8pc;
+    }
+}
