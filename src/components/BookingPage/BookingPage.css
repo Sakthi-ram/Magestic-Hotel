@@ -254,7 +254,7 @@ input[type=number]::-webkit-inner-spin-button {
         max-height: 0;
         opacity: 0;
         /* overflow: hidden; */
-        transition: max-height 0.5s ease-in-out,opacity 0.3s ease-in-out;
+        transition: max-height 0.5s ease-in-out, opacity 0.3s ease-in-out;
         top: 8pc;
     }
 
@@ -273,62 +273,62 @@ input[type=number]::-webkit-inner-spin-button {
         left: 10pc;
         top: 10pc;
     }
-    .bp-card{
-        position:relative;
+
+    .bp-card {
+        position: relative;
         right: 7pc;
         border: 1px solid rgba(54, 54, 54, 0.3);
     }
 
 }
+
 @media (max-width:426px) and (min-width:320px) {
-    .leftside{
-        box-sizing: border-box;
-        max-width: 90%;
-        width: 90%;
+    .leftside {
         z-index: 2;
-        left: 5%;
         max-height: 0;
         opacity: 0;
-        /* overflow: hidden; */
-        padding: 0px 20px;
-        transition: max-height 0.5s ease-in-out,opacity 0.5s ease-in-out;
-      
+        transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+        left: 10%;
+
     }
-    .leftside.filterOpen{
+
+    .leftside.filterOpen {
         max-height: 450px;
         opacity: 1;
-        padding: 20px;
+        margin-bottom: 4pc;
     }
+
     .filter-menuicon {
         display: block;
         position: absolute;
-        top: 58px;
-        right: 10px; 
-        left: auto;
+        top: 70px;
+        left: 10px;
+        z-index: 10;
+        cursor: pointer;
+        pointer-events: auto;
     }
-    .filter-menuicon i{
-        position: relative;
-        font-size: 14px; 
-        padding: 5px 10px; 
-        top: 0;
-        left: 0;
+
+    .filter-menuicon i {
+        font-size: 13px;
+        padding:5px 10px;
+        top: -10px;
     }
-    /* card  */
+
     .cardpage {
-        width: 100%;
-        
+        position: relative;
+        right: 17px;
+        top: 60px;
     }
     .bp-card{
-        border: 1px solid rgba(54, 54, 54, 0.3);
-        margin: 10px auto;
         
     }
-    
-   
+
+
 
 }
-body, html {
-    /* Horizontal scrolling-ai thadukka */
-    overflow-x: hidden; 
+
+body,
+html {
+    overflow-x: hidden;
     width: 100%;
 }
