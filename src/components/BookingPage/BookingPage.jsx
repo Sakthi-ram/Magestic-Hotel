@@ -66,22 +66,33 @@ const BookingPage = () => {
         }
     })
 
+    // filter toggle 
 
 
+    const [filterOpen, setFilterOpen] = useState(false);
+
+    const togglemenufilter = () => {
+        setFilterOpen(!filterOpen);
+      
+    }
 
     return (
         <>
             <section className='BP-header'>
                 <div className="container">
                     <div className="row gx-0">
-                        <div className=' col-lg-6  leftside'>
 
-                            {/* Price Filter  1 */}
+                        <div className='filter-menuicon' onClick={togglemenufilter}>
+                            <i className={filterOpen ? "bi bi-x-lg" : "bi bi-filter-right"}>Filter</i>
+                        </div>
+                        <div className={`col-lg-6  leftside ${filterOpen ? 'filterOpen' : ''}`} >
+
+                            {/* Filter  1 */}
                             <div className='search-card'>
-                            <input type="search" className='Bookingpage-input'
-                                value={search} onChange={(e) => setsearch(e.target.value)} placeholder=' Search...' />
-                                </div>
-                                {/* 2 */}
+                                <input type="search" className='Bookingpage-input'
+                                    value={search} onChange={(e) => setsearch(e.target.value)} placeholder=' Search...' />
+                            </div>
+                            {/* 2 */}
                             <div className='pricefilter'>
                                 <h4>Price</h4>
                                 <p>Your Budget</p>
@@ -101,12 +112,12 @@ const BookingPage = () => {
                                 <div className="bp-arrival">
                                     <h3>Arrival</h3>
                                     <DatePicker className='startdate'
-                                        selected={startDate} onChange={setStartDate}  dateFormat="dd-MM-yyyy" placeholderText='StartDate '/>
+                                        selected={startDate} onChange={setStartDate} dateFormat="dd-MM-yyyy" placeholderText='StartDate ' />
                                 </div>
                                 <div className="bp-departure">
                                     <h3>Departure</h3>
                                     <DatePicker className='enddate'
-                                        selected={endDate} onChange={setEndDate}  dateFormat="dd-MM-yyyy" placeholderText='EndDate '
+                                        selected={endDate} onChange={setEndDate} dateFormat="dd-MM-yyyy" placeholderText='EndDate '
                                     />
                                 </div>
 
@@ -160,7 +171,7 @@ const BookingPage = () => {
 
                         {/* Cards */}
 
-                        <div className=" col-7 col-lg-9 cardpage" >
+                        <div className=" col-12 col-lg-9 cardpage" >
                             {filteruser.length > 0 ? (
                                 filteruser.map((item) => (
                                     <div className='bp-card' key={item.id} >
@@ -175,10 +186,10 @@ const BookingPage = () => {
                             ) : (
                                 <p>No matching rooms found.</p>)}
                         </div>
-                        {isOpen &&(
-                        <div className='message'>
-                            <p className='M-text'>{isOpen}</p>
-                        </div>
+                        {isOpen && (
+                            <div className='message'>
+                                <p className='M-text'>{isOpen}</p>
+                            </div>
                         )}
 
 

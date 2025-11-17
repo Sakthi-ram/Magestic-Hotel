@@ -45,16 +45,16 @@ const Rooms = () => {
         </div>
 
         {/* 1st carousel with text */}
-        <div className=' games container '>
+        <div className=' games container mx-0 px-0'>
           <div className='row gx-0'>
 
-            <div className='service-text  col-12 col-lg-5 mx-3'>
+            <div className='service-text  col-12 col-lg-5 '>
               <h4>AMENITIES</h4>
               <h2>Family-Friendly Fun</h2>
               <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic aperiam quaerat facere eaque consectetur nostrum. Reprehenderit ea placeat facere unde aut eos dolore. Cupiditate cum enim officiis eligendi molestiae! Accusamus, quos quia? Voluptate eaque nostrum iusto? Magnam velit fugiat in asperiores iure repellat nemo facere sapiente eos a, commodi laboriosam inventore rem cupiditate suscipit ipsum quibusdam sequi possimus delectus temporibus est. Architecto voluptatibus veniam quo officia perspiciatis eum, praesentium iure dicta ut! A modi, ipsam iste dolor nobis illum, beatae nulla nesciunt dolorem, culpa voluptatum vitae labore dignissimos. Architecto nostrum accusantium maiores incidunt aperiam blanditiis, recusandae sint eum ab dolorem!</p>
             </div>
 
-            <div className='service-Others col-12 col-lg-6 mx-4'>
+            <div className='service-Others col-12 col-lg-6 '>
               <Carousel>
                 {carouselimagesOthers.map((item) => (
                   <CarouselItem  >
@@ -72,15 +72,15 @@ const Rooms = () => {
         </div>
 
         {/* 2nd carousel with text */}
-        <div className='dinning container '>
+        <div className='dinning container mx-0 px-0 '>
           <div className='row gx-0'>
-            <div className='service-text1 col-12 col-lg-5 mx-3'>
+            <div className='service-text1 col-12 col-lg-5 '>
               <h4>DINNING</h4>
               <h2>Dishes</h2>
               <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic aperiam quaerat facere eaque consectetur nostrum. Reprehenderit ea placeat facere unde aut eos dolore. Cupiditate cum enim officiis eligendi molestiae! Accusamus, quos quia? Voluptate eaque nostrum iusto? Magnam velit fugiat in asperiores iure repellat nemo facere sapiente eos a, commodi laboriosam inventore rem cupiditate suscipit ipsum quibusdam sequi possimus delectus temporibus est. Architecto voluptatibus veniam quo officia perspiciatis eum, praesentium iure dicta ut! A modi, ipsam iste dolor nobis illum, beatae nulla nesciunt dolorem, culpa voluptatum vitae labore dignissimos. Architecto nostrum accusantium maiores incidunt aperiam blanditiis, recusandae sint eum ab dolorem!</p>
             </div>
-            <div className=' col-12 col-lg-6 mx-4'>
-              <Carousel>
+            <div className='service-Others col-12 col-lg-6 '>
+              <Carousel>  
                 {carouselDinning.map((item) => (
                   <CarouselItem  >
                     <div className='slider ' key={item.id} >

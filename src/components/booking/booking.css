@@ -6,7 +6,7 @@
     height: 120px;
     width: 1050px;
     left: 130px;
-    
+
 }
 
 .card .textOne {
@@ -18,12 +18,12 @@
     position: absolute;
     top: 30px;
     left: 20px;
-    background-color:rgb(73, 117, 73) ;
+    background-color: rgb(73, 117, 73);
     color: white;
     font-weight: bold;
     transition: 0.2s;
     text-align: center;
-     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .card .textOne:hover {
@@ -40,7 +40,7 @@
     gap: 90px;
     top: 10px;
     left: 50px;
-    
+
 }
 
 /* Arrival and departure  */
@@ -50,19 +50,19 @@
     font-size: 20px;
     font-weight: bold;
     color: rgb(73, 117, 73);
-     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .arrival p {
     position: relative;
     left: 40px;
-     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .departure p {
     position: relative;
     left: 20px;
-     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 
@@ -113,7 +113,7 @@
     box-shadow: 5px 10px 10px 0 rgba(0, 0, 0, 0.2);
     background-color: white;
     opacity: 0;
-    
+
     transition: opacity 0.3s ease-in-out, transform 0.3s ease;
     pointer-events: none;
     z-index: 3;
@@ -127,9 +127,15 @@
     animation-duration: 0.5s;
 
 }
+
 @keyframes silde {
-    0%{top: 60px;}
-    100%{top: 100px;}
+    0% {
+        top: 60px;
+    }
+
+    100% {
+        top: 100px;
+    }
 }
 
 .Adult,
@@ -208,29 +214,37 @@
 }
 
 
-@media(max-width:1024px) and  (min-width:768px) {
+@media only screen and (max-width:1024px) and (min-width:768px) {
     .card .textOne {
         font-size: 15px;
         width: 100px;
     }
-    .book .person{
+
+    .book .person {
         display: none;
     }
-    .card{
+
+    .card {
         width: 700px;
         left: 0;
     }
 
 }
-@media (max-width:426px) and (min-width:320px){
-    .card .person,.arrival,.departure{
+
+@media only screen and (max-width:600px) {
+
+    .card .person,
+    .arrival,
+    .departure {
         display: none;
     }
-    .card{
+
+    .card {
         left: 10px;
         height: 100px;
         width: 300px;
     }
+
     .icon i {
         right: 50px;
         top: 15px;

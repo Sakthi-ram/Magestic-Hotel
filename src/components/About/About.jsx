@@ -23,7 +23,7 @@ const About = () => {
         </div>
       </div>
       <div className='contact'>
-        <h4>CONTACT US</h4>
+        <h4>Contact Us</h4>
         <p className='add'>Magestic Hotel </p>
         <p className='add1'>No.6 , Rathinapuram, T.P.K Road, Madurai-11</p>
         <div className='others'>

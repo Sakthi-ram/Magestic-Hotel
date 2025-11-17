@@ -16,13 +16,15 @@
 
 .games{
     margin-top: 5pc;
+    
 }
 .service-text{
     text-align: left;
+    margin-left: 3pc;
    
 }
 .service-text h4{
-    font-size: 15px;
+    font-size: 14px;
     background-color: rgb(111, 170, 111);
     width: 90px;
     padding: 4px;
@@ -31,21 +33,27 @@
 /* 2nd Carousel  */
 .dinning{
    margin-top: 5pc;
+   
 }
 .service-text1{
     text-align: left;
+    margin-left: 3pc;
 }
 .service-text1 h4{
     font-size: 15px;
     background-color: rgb(111, 170, 111);
     width: 70px;
     padding: 4px;
-    
 }
+
 /* 2 carousel img common className */
 .slider-img{
     height: 400px;
-    width:700px;
+    width:660px;
+    
+}
+.service-Others{
+    margin-left: 3pc;
 }
 .slider-caption{
     font-weight: bold;
@@ -56,6 +64,8 @@
     position: relative;
     top: 70px;
     right: 110px;
+    font-size: 14px;
+    padding: 10px 0;
 }
 .carousel-control-prev-icon{
     background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='black' viewBox='0 0 12 8'%3E%3Cpath d='M7.5 0l-5 5 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E ");
@@ -73,26 +83,58 @@
         margin-top: 10pc;
     }
     .slider-caption{
-        width: 705px;
+        width: 667px;
     }
-    
+    .carousel{
+        margin-left: 30px;
+    }
+    .carousel-control-next-icon{
+        margin-right: 30px;
+    }
+    .service-Others{
+        margin-left: 1pc;
+    }
+    .service-text p{
+        width: 600px;
+    }
+    .service-text1 p{
+        width: 600px;
+    }
 }
-@media (max-width:426px) and (min-width:320px){
+@media (max-width:600px){
     .service{
-        margin-top: 5pc;
+        margin-top: 10pc;
     }
     .slider-img{
-        width: 380px;
-        height: 250px;
+        width: 280px;
+        height: 200px;
     }
     .slider-caption {
        right: 3.7pc;
-       width: 380px;
-       height: 60px;
+       width: 300px;
+       height: 50px;
        font-size: 15px;
+       top: 4.5pc;
+       font-size: 13px;
     }
     .carousel{
-        margin-right: 20px;
+        width: 280px;
+        margin-left: 10px;
+    }
+    
+    /* service text  */
+    .service-text{
+        margin-left: 1pc;
+        width: 280px;
+        text-align: left;
+    }
+    .service-text1{
+        margin-left: 1pc;
+        width: 280px;
+        text-align:left;
+    }
+    .service-Others{
+        margin-left: 1pc;
     }
     
 }

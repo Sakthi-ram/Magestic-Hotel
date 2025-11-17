@@ -186,28 +186,34 @@
     
 }
 
-@media (max-width:426px) and (min-width:320px) {
+@media  (max-width:320px) {
     .footer{
-        height: 550px;
+        height: 530px;
     }
+    
     /* contact  */
     .contact{
         position: relative;
-        bottom: 7pc;
+        bottom: 6.5pc;
+        left: 2pc;
     }
     .contact h4 {
         top: 20pc;
         font-size: 18px;
+        
+        font-family: serif;
+        letter-spacing: 1px;
     }
     .contact .add{
-        top: 22.5pc;
+        top: 22.6pc;
         font-size: 12px;
+        
     }
     .contact .add1{
         font-size: 12px;
         top: 24pc;
-        left: 1.3pc;
-        width: 250px;
+        
+        width: 200px;
     }
     .others .phone{
         font-size: 12px;
@@ -223,25 +229,35 @@
     .copyright{
         bottom: 1px;
         font-size: 12px;
-        left: 19px;
+        left: 2.4pc;
     }
     /* about-icons */
     .about-icon{
-        bottom: 3pc;
+        bottom: 4pc;
+        left: 3pc;
+    }
+    .about-icon h3{
+        font-size: 16px;
+        left: 2pc;
+    }
+    .about-icon i{
+        right: 1pc;
+        font-size: 15px;
     }
     /* about-text  */
     .about-text h1{
         font-size: 20px;
-        left: 6pc;
+        left: 5pc;
     }
     .about-text p{
         font-size: 10px;
-        width: 300px;
-        left: 15px;
+        width: 250px;
+        left: 2pc;
         top: 4pc;
     }
+    /* box  */
     .about-input{
-        left: 25px;
+        left: 3pc;
         height: 30px;
         width: 150px;
         font-size: 12px;
@@ -250,11 +266,97 @@
     .about-btn{
         font-size: 10px;
         height: 30px;
-        left: 10.95pc;
+        left: 12pc;
         padding: 5px;
         top: 8.88pc;
     }
 
 
+
+}
+@media (max-width:426px) {
+      .footer{
+        height: 530px;
+    }
+    
+    /* contact  */
+    .contact{
+        position: relative;
+        bottom: 6.5pc;
+        left: 2pc;
+    }
+    .contact h4 {
+        top: 20pc;
+        font-size: 18px;
+        
+        font-family: serif;
+        letter-spacing: 1px;
+    }
+    .contact .add{
+        top: 22.6pc;
+        font-size: 12px;
+        
+    }
+    .contact .add1{
+        font-size: 12px;
+        top: 24pc;
+        
+        width: 200px;
+    }
+    .others .phone{
+        font-size: 12px;
+        top: 17pc;
+        left: 19px;
+    }
+    .others .email{
+        font-size: 12px;
+        left: 19px;
+        top: 18.5pc;
+    }
+    /* copyright  */
+    .copyright{
+        bottom: 1px;
+        font-size: 12px;
+        left: 2.4pc;
+    }
+    /* about-icons */
+    .about-icon{
+        bottom: 4pc;
+        left: 3pc;
+    }
+    .about-icon h3{
+        font-size: 16px;
+        left: 2pc;
+    }
+    .about-icon i{
+        right: 1pc;
+        font-size: 15px;
+    }
+    /* about-text  */
+    .about-text h1{
+        font-size: 20px;
+        left: 5pc;
+    }
+    .about-text p{
+        font-size: 10px;
+        width: 250px;
+        left: 2pc;
+        top: 4pc;
+    }
+    /* box  */
+    .about-input{
+        left: 3pc;
+        height: 30px;
+        width: 150px;
+        font-size: 12px;
+        top: 7pc;
+    }
+    .about-btn{
+        font-size: 10px;
+        height: 30px;
+        left: 12pc;
+        padding: 5px;
+        top: 8.88pc;
+    }
 
 }
