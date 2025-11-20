@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useMemo, useState } from 'react'
+import React, { use, useContext, useEffect, useMemo, useState } from 'react'
 import '../BookingPage/BookingPage.css'
 import 'react-datepicker/dist/react-datepicker.css'
 import DatePicker from 'react-datepicker'
@@ -11,6 +11,7 @@ import Doublebed5 from '../../assets/Hotelrooms/Rooms-6.jpg'
 import Doublebed6 from '../../assets/Hotelrooms/Rooms-7.png'
 import Doublebed7 from '../../assets/Hotelrooms/Rooms-10.png'
 import BookingContext from '../booking/BookingContext'
+import { get } from 'react-scroll/modules/mixins/scroller'
 
 const BookingPage = () => {
 
@@ -25,7 +26,10 @@ const BookingPage = () => {
         { id: 8, image: Doublebed7, alt: "DoubleBedRoom", name: "Quadruple Bed with OutSide view", para: "2 person and 1 child", price: 500 }
     ]
 
+    // search box 
     const [search, setsearch] = useState("");
+    const [isSearch, setIsSearch] = useState('');
+    // Price Filter 
     const [min, setMin] = useState("");
     const [max, setMax] = useState("");
     const [tempMin, setTempMin] = useState("");
@@ -34,8 +38,10 @@ const BookingPage = () => {
     const applyFilter = () => {
         setMin(Number(tempMin));
         setMax(Number(tempMax));
+        setsearch(isSearch);
     };
 
+    // Card search & price filter min to max
     const filteruser = useMemo(() => {
         return cardimages.filter((user) => {
             const matchesSearch =
@@ -46,35 +52,78 @@ const BookingPage = () => {
 
             return matchesSearch && matchesPrice;
         })
+
     }, [search, min, max])
 
     //useContext- Person-Count(guest), Date-Picker(startDate, endDate)
     const { startDate, endDate, guest, setStartDate, setEndDate, setGuest } =
         useContext(BookingContext);
+
+    // person count card     
     const [iscardopen, setiscardopen] = useState(false);
 
     function click() {
         setiscardopen(prev => !prev);
     }
 
-    const [isOpen, setIsOpen] = useState('');
+    // Days Calculate and price Calculate 
+    const getDays = () => {
+        if (!startDate && !endDate) return 1;
 
-    useEffect(() => {
-        if (isOpen) {
-            const timer = setTimeout(() => setIsOpen(''), 3000)
-            return () => clearTimeout(timer);
+        const diffTime = Math.abs(endDate - startDate);
+        return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+    }
+
+
+    // book now message & Details box 
+    const [isOpen, setIsOpen] = useState(false);
+    const [selectedRoom, setSelectedRoom] = useState({ name: '', price: '' });
+
+    const book = (room) => {
+
+        if (!startDate || !endDate || guest.adult === 0) {
+            alert("Please select arrival and departure dates before booking.");
+            return;
         }
-    })
 
-    // filter toggle 
+        setSelectedRoom(room);
+        setIsOpen(true);
+    }
+    const closeCard = () => {
+        setIsOpen(false);
+    }
 
+    // useEffect(() => {
+    //     if (isOpen) {
+    //         const timer = setTimeout(() => setIsOpen(''), 3000)
+    //         return () => clearTimeout(timer);
+    //     }
+    // })
+
+    // filter toggle resposive
 
     const [filterOpen, setFilterOpen] = useState(false);
 
     const togglemenufilter = () => {
         setFilterOpen(!filterOpen);
-      
+
     }
+
+    // message for payment 
+    const [message, setMessage] = useState('');
+
+    const messagealert = () => {
+
+        setMessage("payment Successfull")
+
+        setTimeout(() => {
+            setMessage("")
+        }, 3000);
+    }
+
+
+
 
     return (
         <>
@@ -87,12 +136,12 @@ const BookingPage = () => {
                         </div>
                         <div className={`col-lg-6  leftside ${filterOpen ? 'filterOpen' : ''}`} >
 
-                            {/* Filter  1 */}
+                            {/* 1.Search box */}
                             <div className='search-card'>
                                 <input type="search" className='Bookingpage-input'
-                                    value={search} onChange={(e) => setsearch(e.target.value)} placeholder=' Search...' />
+                                    value={isSearch} onChange={(e) => setIsSearch(e.target.value)} placeholder=' Search...' />
                             </div>
-                            {/* 2 */}
+                            {/* 2.price filter */}
                             <div className='pricefilter'>
                                 <h4>Price</h4>
                                 <p>Your Budget</p>
@@ -179,25 +228,59 @@ const BookingPage = () => {
                                         <h3>{item.name}</h3>
                                         <p>{item.para}</p>
                                         <p>{item.price}$</p>
-                                        <button onClick={() => setIsOpen(() => `${item.name} Booked. The Amount is ${item.price}`)}>Book Now</button>
-                                        <p className='totelAmt'></p>
+                                        <button onClick={() => book(item)}>Book Now</button>
                                     </div>
                                 ))
                             ) : (
-                                <p>No matching rooms found.</p>)}
+                                <p> No matching rooms found. </p>)}
                         </div>
-                        {isOpen && (
-                            <div className='message'>
+
+                        {/* <div className='message'>
                                 <p className='M-text'>{isOpen}</p>
-                            </div>
-                        )}
-
-
-
+                            </div> */}
 
 
                     </div>
                 </div>
+
+                {/* Form for Details and Payment */}
+
+                <div className={`Details ${isOpen ? "openDetails" : ''}`}>
+                    <form>
+                        <fieldset>
+                            <legend>Details</legend>
+                            <i className='bi bi-x-lg' onClick={closeCard}> </i>
+                            <label htmlFor="fname" aria-autocomplete='on'>First name : </label>
+                            <input type="text" id='fname' placeholder='Type Your First Name' required /><br />
+
+                            <label htmlFor="lname" aria-autocomplete='on'> Last name : </label>
+                            <input type="text" id='lname' placeholder='Type Your Last Name' required /><br />
+
+                            <label htmlFor="phno" aria-autocomplete='on'> Phone Number : </label>
+                            <input type="text" id='phno' placeholder='Type Your Phone No.' required /><br />
+
+                            <label htmlFor="nameofroom" >Room : </label>
+                            <input type="text" disabled id='nameofroom' value={selectedRoom.name} /><br />
+
+                            <label htmlFor="price">Price : </label>
+                            <input type="text" disabled id='price' value={selectedRoom.price} /><br />
+
+                            <label>Total Days:</label>
+                            <input type="text" disabled value={getDays()} />
+
+                            <label>Total Amount:</label>
+                            <input type="text" disabled value={selectedRoom.price * getDays()} />
+
+                            <label htmlFor="upi-id" aria-autocomplete='on'> UPI ID : </label>
+                            <input type="text" id='upi-id' placeholder='Type Your UPI ID' required /><br />
+                            <button type='submit' onClick={messagealert} >Payment</button>
+                        </fieldset>
+                    </form>
+                </div>
+                <div className='msg'>
+                    <p>{message}</p>
+                </div>
+
             </section >
 
         </>
