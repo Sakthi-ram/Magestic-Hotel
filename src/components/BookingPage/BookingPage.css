@@ -350,6 +350,9 @@ input[type=number]::-webkit-inner-spin-button {
         overflow-x: hidden;
         width: 100%;
     }
+    .Details{
+        left: 10pc;
+    }
 
 }
 
@@ -395,5 +398,10 @@ input[type=number]::-webkit-inner-spin-button {
     html {
         overflow-x: hidden;
         width: 100%;
+    }
+    .Details{
+        left: 3pc;
+        width: 80%;
+        z-index: 2;
     }
 }
