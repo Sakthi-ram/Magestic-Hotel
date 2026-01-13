@@ -12,13 +12,6 @@ const Booking = () => {
   const { startDate, endDate, guest, setStartDate, setEndDate, setGuest } =
     useContext(BookingContext); 
 
-  let difference = 0;
-  if (startDate && endDate) {
-    const timer = endDate.getTime() - startDate.getTime();
-    difference = Math.ceil(timer / (1000 * 60 * 60 * 24));
-    if (difference <= 0) difference = 1;
-    console.log("totel Days" + difference);
-  }
 
 
   const [iscardopen, setiscardopen] = useState(false);
@@ -107,6 +100,8 @@ const Booking = () => {
                 </div>
               </div>
               <div className='icon'>
+
+                {/* Arrow icon  */}
 
                 <Link to="/bookingpage" ><i className="bi bi-arrow-right-circle-fill"></i></Link>
               </div>

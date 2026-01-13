@@ -13,9 +13,6 @@ const Explore = () => {
   return (
     <>
       <div className='explore' >
-
-
-
         <div className=' container'>
           <div className='row explore-text'>
             <div className='col-12 col-6 col-4 text-center '>
