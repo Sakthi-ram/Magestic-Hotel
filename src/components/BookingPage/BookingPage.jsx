@@ -1,4 +1,5 @@
-import React, { use, useContext, useEffect, useMemo, useState } from 'react'
+import React, {  useContext, useMemo, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import '../BookingPage/BookingPage.css'
 import 'react-datepicker/dist/react-datepicker.css'
 import DatePicker from 'react-datepicker'
@@ -112,14 +113,14 @@ const BookingPage = () => {
 
     // message for payment 
     const [message, setMessage] = useState('');
-
-    const messagealert = () => {
-
+    const navigate = useNavigate();
+    const messagealert = (e) => {
+        e.preventDefault(); 
         setMessage("payment Successfull")
-
+    
         setTimeout(() => {
-            setMessage("")
-        }, 3000);
+            navigate('/'); 
+        }, 1000);
     }
 
 
@@ -265,6 +266,14 @@ const BookingPage = () => {
                             <label htmlFor="price">Price : </label>
                             <input type="text" disabled id='price' value={selectedRoom.price} /><br />
 
+                            <label htmlFor="arrivalDate">Arrival Date : </label>
+                            <input type="text" disabled id="arrivalDate"
+                             value={startDate ? startDate.toLocaleDateString('en-GB').replaceAll('/', '-') : ''} /><br />
+
+                            <label htmlFor="departureDate">Departure Date: </label>
+                            <input type="text" disabled  id="departureDate"
+                            value={endDate ? endDate.toLocaleDateString('en-GB').replaceAll('/', '-') : ''} /><br />
+
                             <label>Total Days:</label>
                             <input type="text" disabled value={getDays()} />
 
@@ -273,13 +282,13 @@ const BookingPage = () => {
 
                             <label htmlFor="upi-id" aria-autocomplete='on'> UPI ID : </label>
                             <input type="text" id='upi-id' placeholder='Type Your UPI ID' required /><br />
-                            <button type='submit' onClick={messagealert} >Payment</button>
+                            <button type='submit' onClick={(e) => messagealert(e)} >Payment</button>
                         </fieldset>
                     </form>
                 </div>
-                <div className='msg'>
-                    <p>{message}</p>
-                </div>
+                
+                    <span className='msg'>{message}</span>
+                
 
             </section >
 

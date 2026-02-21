@@ -294,7 +294,8 @@ input[type=number]::-webkit-inner-spin-button {
     justify-content: center;
 }
 .Details.openDetails{
-    max-height:1110px;
+    max-height:1350px;
+    
     opacity: 1;
 }
 .Details .bi-x-lg{
@@ -308,6 +309,10 @@ input[type=number]::-webkit-inner-spin-button {
     padding: 5px;
     border-radius: 20px;
     font-size: 15px;
+}
+.msg{
+    background-color: black;
+    color: white;
 }
 
 
