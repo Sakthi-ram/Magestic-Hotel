@@ -9,6 +9,7 @@ import BookingPage from './components/BookingPage/BookingPage'
 import {BookingProvider} from './components/booking/BookingContext'
 
 
+
 function App() {
 
   return (
@@ -20,6 +21,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/Bookingpage' element={<BookingPage />} />
+            
           </Routes>
 
         </Router>
