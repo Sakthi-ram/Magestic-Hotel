@@ -10,7 +10,7 @@
 }
 .bgimg{
     background-image: url('../../assets/images/explore img1.jpg');
-     -webkit-mask:linear-gradient(180deg,rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 30%); 
+    -webkit-mask:linear-gradient(180deg,rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 30%); 
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
