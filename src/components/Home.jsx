@@ -4,6 +4,7 @@ import Booking from './booking/Booking'
 import Service from './Services/Services'
 import About from './About/About'
 import Location from './Location/Location'
+import Admin from './Adminpage/Admin'
 
 
 const Home = () => {
@@ -31,6 +32,7 @@ const Home = () => {
       <section >
         <Location />
       </section>
+      
        
        
 

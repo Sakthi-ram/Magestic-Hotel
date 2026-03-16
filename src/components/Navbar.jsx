@@ -43,6 +43,7 @@ const Navbar = () => {
             <div className=" col-md-4 contact-nav">
               <a href="mailto:sakthiramb975@gmail.com" title='sakthiramb975@gmail.com' className={isopen ? 'mail active' : 'mail'}><i className="bi bi-envelope-at-fill"></i></a>
               <a href="tel:6380728206" title='6380728206' className={isopen ? 'moblie active' : 'mobile'}><i className="bi bi-telephone-plus-fill"></i></a>
+              <Link to="/Admin">Admin</Link>
             </div>
           </div>
 
