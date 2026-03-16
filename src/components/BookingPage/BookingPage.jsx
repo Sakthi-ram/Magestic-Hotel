@@ -135,7 +135,7 @@ const BookingPage = () => {
 
     const navigate = useNavigate();
     const messagealert = (e) => {
-        e.preventDefault();
+        
 
         const userData = {
             firstname: firstname,
@@ -167,6 +167,7 @@ const BookingPage = () => {
             console.error(err);
             alert(" PLease Fill the Form . Then go to Click Payment");
         });
+        e.preventDefault();
     }
 
 
@@ -330,8 +331,8 @@ const BookingPage = () => {
                             <label>Total Amount:</label>
                             <input type="text" disabled value={fare} onChange={(e) => setFare(e.target.value)} />
 
-                            <label htmlFor="upi-id" aria-autocomplete='on'> UPI ID : </label>
-                            <input type="text" id='upi-id' placeholder='Type Your UPI ID' value={type}
+                            <label aria-autocomplete='on'> UPI ID : </label>
+                            <input type="text" placeholder='Type Your UPI ID' value={type}
                                 onChange={(e) => setType(e.target.value)} required /><br />
 
                             <button type='submit' onClick={(e) => messagealert(e)} >Payment</button>

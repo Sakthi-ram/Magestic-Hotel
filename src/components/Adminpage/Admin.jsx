@@ -16,6 +16,7 @@ const Admin = () => {
   },[]);
   return (
     <div className='container table-responsive'>
+      <div className='my-5'><br /><br />
       <h2 className='text-center'>Customer List </h2>
       <table className='table table-striped  table-dark table-hover my-5'>
         <thead >
@@ -52,7 +53,7 @@ const Admin = () => {
         </tbody>
       </table>
 
-      
+      </div>
     </div>
   )
 }
