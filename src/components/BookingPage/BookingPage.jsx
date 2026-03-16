@@ -1,4 +1,4 @@
-import React, {  useContext, useMemo, useState } from 'react'
+import React, { useContext, useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import '../BookingPage/BookingPage.css'
 import 'react-datepicker/dist/react-datepicker.css'
@@ -12,7 +12,8 @@ import Doublebed5 from '../../assets/Hotelrooms/Rooms-6.jpg'
 import Doublebed6 from '../../assets/Hotelrooms/Rooms-7.png'
 import Doublebed7 from '../../assets/Hotelrooms/Rooms-10.png'
 import BookingContext from '../booking/BookingContext'
-import { get } from 'react-scroll/modules/mixins/scroller'
+import { createUser } from '../userService/userService';
+
 
 const BookingPage = () => {
 
@@ -111,19 +112,62 @@ const BookingPage = () => {
 
     }
 
+
+    //data transfer to admin page (click payment method button)
+
+    const [firstname, setFirstName] = useState("");
+    const [lastname, setLastName] = useState("");
+    const [phoneNo, setPhoneNo] = useState("");
+    const [fare, setFare] = useState("");
+    const [days, setDays] = useState("");
+    const [type, setType] = useState("");
+
+    useEffect(() => {
+        if (selectedRoom.price && startDate && endDate) {
+            const d = getDays();
+            setDays(d);
+            setFare(selectedRoom.price * d);
+        }
+    }, [selectedRoom, startDate, endDate]);
+
     // message for payment 
     const [message, setMessage] = useState('');
+
     const navigate = useNavigate();
     const messagealert = (e) => {
-        e.preventDefault(); 
-        setMessage("payment Successfull")
-    
-        setTimeout(() => {
-            navigate('/'); 
-        }, 1000);
+        e.preventDefault();
+
+        const userData = {
+            firstname: firstname,
+            lastname: lastname,
+            phonenumber: phoneNo,
+            startdate: startDate ? startDate.toLocaleDateString('en-GB', {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric'
+            }).split('/').join('-') : '',
+
+            enddate: endDate ? endDate.toLocaleDateString('en-GB', {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric'
+            }).split('/').join('-') : '',
+            days: days,
+            fare: fare,
+            type: type
+        };
+
+
+        createUser(userData).then((res) => {
+            setMessage("Payment Successful!");
+            setTimeout(() => {
+                navigate('/');
+            }, 2000);
+        }).catch(err => {
+            console.error(err);
+            alert("Error in processing payment");
+        });
     }
-
-
 
 
     return (
@@ -247,18 +291,22 @@ const BookingPage = () => {
                 {/* Form for Details and Payment */}
 
                 <div className={`Details ${isOpen ? "openDetails" : ''}`}>
-                    <form>
+                    <form onSubmit={messagealert}>
                         <fieldset>
                             <legend>Details</legend>
                             <i className='bi bi-x-lg' onClick={closeCard}> </i>
+
                             <label htmlFor="fname" aria-autocomplete='on'>First name : </label>
-                            <input type="text" id='fname' placeholder='Type Your First Name' required /><br />
+                            <input type="text" id='fname' placeholder='Type Your First Name'
+                                value={firstname} onChange={(e) => setFirstName(e.target.value)} required /><br />
 
                             <label htmlFor="lname" aria-autocomplete='on'> Last name : </label>
-                            <input type="text" id='lname' placeholder='Type Your Last Name' required /><br />
+                            <input type="text" id='lname' placeholder='Type Your Last Name'
+                                value={lastname} onChange={(e) => setLastName(e.target.value)} required /><br />
 
                             <label htmlFor="phno" aria-autocomplete='on'> Phone Number : </label>
-                            <input type="text" id='phno' placeholder='Type Your Phone No.' required /><br />
+                            <input type="text" id='phno' placeholder='Type Your Phone No.'
+                                value={phoneNo} onChange={(e) => setPhoneNo(e.target.value)} required /><br />
 
                             <label htmlFor="nameofroom" >Room : </label>
                             <input type="text" disabled id='nameofroom' value={selectedRoom.name} /><br />
@@ -268,27 +316,31 @@ const BookingPage = () => {
 
                             <label htmlFor="arrivalDate">Arrival Date : </label>
                             <input type="text" disabled id="arrivalDate"
-                             value={startDate ? startDate.toLocaleDateString('en-GB').replaceAll('/', '-') : ''} /><br />
+                                value={startDate ? startDate.toLocaleDateString('en-GB').replaceAll('/', '-') : ''}
+                            /><br />
 
                             <label htmlFor="departureDate">Departure Date: </label>
-                            <input type="text" disabled  id="departureDate"
-                            value={endDate ? endDate.toLocaleDateString('en-GB').replaceAll('/', '-') : ''} /><br />
+                            <input type="text" disabled id="departureDate"
+                                value={endDate ? endDate.toLocaleDateString('en-GB').replaceAll('/', '-') : ''}
+                            /><br />
 
                             <label>Total Days:</label>
-                            <input type="text" disabled value={getDays()} />
+                            <input type="text" disabled value={days} onChange={(e) => setDays(e.target.value)} />
 
                             <label>Total Amount:</label>
-                            <input type="text" disabled value={selectedRoom.price * getDays()} />
+                            <input type="text" disabled value={fare} onChange={(e) => setFare(e.target.value)} />
 
                             <label htmlFor="upi-id" aria-autocomplete='on'> UPI ID : </label>
-                            <input type="text" id='upi-id' placeholder='Type Your UPI ID' required /><br />
+                            <input type="text" id='upi-id' placeholder='Type Your UPI ID' value={type}
+                                onChange={(e) => setType(e.target.value)} required /><br />
+
                             <button type='submit' onClick={(e) => messagealert(e)} >Payment</button>
                         </fieldset>
                     </form>
                 </div>
-                
-                    <span className='msg'>{message}</span>
-                
+
+                <span className='msg'>{message}</span>
+
 
             </section >
 
