@@ -165,7 +165,7 @@ const BookingPage = () => {
             }, 2000);
         }).catch(err => {
             console.error(err);
-            alert("Error in processing payment");
+            alert(" PLease Fill the Form . Then go to Click Payment");
         });
     }
 
