@@ -77,11 +77,12 @@
     margin-right: 15px;
 
 }
-.admin{
+
+.admin {
     text-decoration: none;
     list-style: none;
     color: white;
-    
+
 }
 
 /* Home  */
@@ -282,7 +283,8 @@
         right: 20px;
         bottom: 15px;
     }
-    .menuicon .bi-filter-right{
+
+    .menuicon .bi-filter-right {
         position: relative;
         top: 10px;
     }
